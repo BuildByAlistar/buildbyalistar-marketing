@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build By Alistar | AI Automation Studio UAE</title>
+    
+    <!-- Meta Domain Verification -->
+    <meta name="facebook-domain-verification" content="twjyvtcchw2utf0moafcl64fvr4w1a" />
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1453953089690254');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1453953089690254&ev=PageView&noscript=1"/></noscript>
+    
+    <!-- Tailwind CSS & Lucide Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#07090E',
+                        card: '#11141E',
+                        cardHover: '#171A26',
+                        primary: '#6B46C1', // Purplish matching the screenshot
+                        primaryHover: '#805AD5'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body { background-color: #07090E; color: #ffffff; overflow-x: hidden; }
+
+        .grad{
+  background:linear-gradient(90deg,#2D6BFF,#7B4DFF);
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:transparent;
+}
+
+        .bg-primary-grad {
+            background: linear-gradient(to right, #6B46C1, #8B5CF6);
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 80vh;
+            background: radial-gradient(ellipse at top, rgba(107, 70, 193, 0.15), transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.4);
+            background-color: #171A26;
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+        }
+
+        .floating-wa {
+            box-shadow: 0 8px 30px rgba(37,211,102,0.4);
+        }
+
+        /* Nav links hover effect */
+        .nav-link {
+            position: relative;
+            color: #A1A1AA;
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="relative antialiased text-zinc-300">
+
+    <div class="hero-glow"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#07090E]/90 backdrop-blur-lg border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="https://buildbyalistar.com/logo.png" alt="Build By Alistar" class="h-8 w-auto" onerror="this.style.display='none'">
+                <span class="font-bold text-lg text-white tracking-tight">Build By <span class="text-orange-500">Alistar</span></span>
+            </div>
+            
+            <div class="hidden lg:flex items-center gap-6 text-[13px] font-medium">
+                <a href="#" class="nav-link text-white bg-white/5 px-3 py-1.5 rounded-md">Home</a>
+                <a href="#" class="nav-link">Templates</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#whatsapp" class="nav-link">WhatsApp</a>
+                <a href="#chatbots" class="nav-link">Chatbots</a>
+                <a href="#" class="nav-link">Courses</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="https://wa.me/971558796245" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://tools.buildbyalistar.com" class="text-[13px] font-medium text-zinc-400 hover:text-white transition-colors hidden md:block">
+                    AI Tools
+                </a>
+                <button class="lg:hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-card border-b border-white/5 p-4 text-center space-y-4">
+            <a href="#" class="block text-zinc-400 font-medium">Home</a>
+            <a href="#services" class="block text-zinc-400 font-medium">Services</a>
+            <a href="#whatsapp" class="block text-zinc-400 font-medium">WhatsApp</a>
+            <a href="#chatbots" class="block text-zinc-400 font-medium">Chatbots</a>
+            <a href="#pricing" class="block text-zinc-400 font-medium">Pricing</a>
+            <a href="https://tools.buildbyalistar.com" class="block text-white font-bold bg-white/10 py-2 rounded-lg">AI Tools Hub</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-40 pb-20 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 relative">
+        <div class="flex-1 hidden lg:flex justify-center items-center">
+            <img src="https://buildbyalistar.com/logo.png" alt="Build By Alistar Logo" class="w-64 h-64 object-contain" onerror="this.style.display='none'">
+        </div>
+        <div class="flex-1 space-y-8 text-center lg:text-left">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+                Scale Your Business With AI Automation
+            </h1>
+            <p class="text-lg text-zinc-400 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                We build WhatsApp bots, chatbots, and AI tools that convert conversations into consistent revenue.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                <a href="#pricing" class="w-full sm:w-auto px-8 py-3.5 bg-primary-grad hover:opacity-90 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all shadow-lg shadow-purple-500/25">
+                    Get AI Automation <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="https://tools.buildbyalistar.com" class="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-zinc-700 hover:bg-white/5 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
+                    Explore AI Tools <i data-lucide="sparkles" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Overview -->
+    <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center space-y-4 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Services designed for fast results</h2>
+            <p class="text-sm text-zinc-400">Launch proven automation systems that reduce manual work and increase conversion rates.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- WhatsApp Bots -->
+            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6">
+                    <i data-lucide="message-square" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">WhatsApp Bots</h3>
+                <p class="text-sm text-zinc-400 mb-8 h-16">Convert every inquiry instantly with smart replies, lead qualification, and automated follow-ups on WhatsApp.</p>
+                <div class="pt-4 border-t border-white/5 text-xs text-zinc-500">
+                    Lead capture + support 24/7
+                </div>
+            </div>
+            
+            <!-- Chatbots -->
+            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6">
+                    <i data-lucide="bot" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Chatbots</h3>
+                <p class="text-sm text-zinc-400 mb-8 h-16">Deploy AI chatbots for your website and funnels to answer questions, qualify prospects, and book meetings.</p>
+                <div class="pt-4 border-t border-white/5 text-xs text-zinc-500">
+                    Fast onboarding for your team
+                </div>
+            </div>
+
+            <!-- AI Tools -->
+            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6">
+                    <i data-lucide="terminal" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">AI Tools</h3>
+                <p class="text-sm text-zinc-400 mb-8 h-16">Access practical AI tools that improve productivity, automate workflows, and help your business scale faster.</p>
+                <div class="pt-4 border-t border-white/5 text-xs text-zinc-500">
+                    Ready to use in minutes
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tool -->
+    <section class="py-12 px-6 max-w-7xl mx-auto">
+        <div class="bg-card border border-white/10 rounded-2xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center gap-10 card-hover">
+            <div class="absolute right-0 top-0 w-1/2 h-full bg-indigo-600/10 blur-[100px] pointer-events-none"></div>
+            <div class="flex-1 relative z-10">
+                <p class="text-[10px] font-bold tracking-widest text-zinc-500 uppercase mb-4">FEATURED TOOL</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">AI Data Entry Tool that keeps your operations moving</h2>
+                <p class="text-zinc-400 mb-8 max-w-2xl text-sm leading-relaxed">Reduce repetitive admin work with our AI Data Entry Tool. Process forms, extract details, and sync clean data into your workflows with speed and accuracy.</p>
+                <a href="https://tools.buildbyalistar.com" class="inline-flex items-center gap-2 px-8 py-3 bg-primary-grad hover:opacity-90 text-white rounded-lg font-medium transition-colors shadow-lg shadow-purple-500/20">
+                    Open AI Data Entry Tool <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Section -->
+    <section id="whatsapp" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/5 mt-12">
+        <div class="text-center space-y-4 mb-16">
+            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-semibold border border-emerald-500/20 uppercase tracking-wider"><i data-lucide="message-circle" class="w-3 h-3 inline-block mr-1"></i> WhatsApp Business API</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-white">WhatsApp <span class="text-indigo-400">Solutions</span> for Modern Teams</h2>
+            <p class="text-sm text-zinc-400 max-w-2xl mx-auto">Broadcasts, auto-replies, and lead capture—running inside the app your customers already use. Reach your audience where they are.</p>
+            <div class="pt-2">
+                <a href="https://wa.me/971558796245" class="inline-flex items-center gap-2 px-6 py-3 bg-primary-grad hover:opacity-90 text-white rounded-lg font-medium transition-colors">
+                    <i data-lucide="message-square" class="w-4 h-4"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center mb-10">
+            <span class="px-4 py-1.5 rounded-full bg-white/5 text-zinc-400 text-xs border border-white/10">Our Solutions</span>
+            <h3 class="text-2xl font-bold text-white mt-4">Powerful WhatsApp <span class="text-indigo-400">Automation</span></h3>
+        </div>
+
+        <!-- WhatsApp Products -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover flex flex-col">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6">
+                    <i data-lucide="users" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">WhatsApp Lead Capture Bot</h3>
+                <p class="text-xs text-zinc-400 mb-6 h-12">Automatically capture and qualify leads through WhatsApp. Respond instantly to inquiries 24/7.</p>
+                <ul class="space-y-3 text-xs text-zinc-300 mb-8 flex-1">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Instant auto-replies</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Lead qualification</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> CRM Integration</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Multi-language support</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Analytics dashboard</li>
+                </ul>
+                <a href="#pricing" class="w-full py-2.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-sm font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors">
+                    Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover flex flex-col">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6">
+                    <i data-lucide="send" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">WhatsApp Broadcast Bot</h3>
+                <p class="text-xs text-zinc-400 mb-6 h-12">Send personalized messages to thousands of contacts with high open rates.</p>
+                <ul class="space-y-3 text-xs text-zinc-300 mb-8 flex-1">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Bulk messaging</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Personalization tags</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Scheduled broadcasts</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Delivery tracking</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Template management</li>
+                </ul>
+                <a href="#pricing" class="w-full py-2.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-sm font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors">
+                    Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover flex flex-col">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6">
+                    <i data-lucide="headphones" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">WhatsApp Customer Support</h3>
+                <p class="text-xs text-zinc-400 mb-6 h-12">Provide instant customer support with AI-powered responses and human handoff.</p>
+                <ul class="space-y-3 text-xs text-zinc-300 mb-8 flex-1">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> 24/7 auto-responses</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> FAQ automation</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Human handoff</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Ticket creation</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Support analytics</li>
+                </ul>
+                <a href="#pricing" class="w-full py-2.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-sm font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors">
+                    Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Why WhatsApp Works -->
+        <div class="text-center space-y-4 mb-10">
+            <h3 class="text-2xl font-bold text-white">Why WhatsApp <span class="text-indigo-400">Works</span></h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            <div class="bg-card border border-white/5 p-8 rounded-2xl text-center card-hover">
+                <i data-lucide="trending-up" class="w-6 h-6 text-emerald-400 mx-auto mb-4"></i>
+                <h4 class="font-bold text-white mb-2">98% Open Rate</h4>
+                <p class="text-xs text-zinc-400">WhatsApp messages have the highest engagement compared to email or SMS.</p>
+            </div>
+            <div class="bg-card border border-white/5 p-8 rounded-2xl text-center card-hover">
+                <i data-lucide="zap" class="w-6 h-6 text-emerald-400 mx-auto mb-4"></i>
+                <h4 class="font-bold text-white mb-2">Instant Delivery</h4>
+                <p class="text-xs text-zinc-400">Messages delivered in seconds, not hours or days.</p>
+            </div>
+            <div class="bg-card border border-white/5 p-8 rounded-2xl text-center card-hover">
+                <i data-lucide="globe" class="w-6 h-6 text-emerald-400 mx-auto mb-4"></i>
+                <h4 class="font-bold text-white mb-2">Global Reach</h4>
+                <p class="text-xs text-zinc-400">Connect with customers worldwide on their preferred platform.</p>
+            </div>
+            <div class="bg-card border border-white/5 p-8 rounded-2xl text-center card-hover">
+                <i data-lucide="line-chart" class="w-6 h-6 text-emerald-400 mx-auto mb-4"></i>
+                <h4 class="font-bold text-white mb-2">Cost Effective</h4>
+                <p class="text-xs text-zinc-400">Lower cost per interaction compared to traditional channels.</p>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div class="space-y-2">
+                <h2 class="text-4xl md:text-5xl font-black text-indigo-400">98%</h2>
+                <p class="text-zinc-500 text-sm">Message Open Rate</p>
+            </div>
+            <div class="space-y-2">
+                <h2 class="text-4xl md:text-5xl font-black text-indigo-400">45%</h2>
+                <p class="text-zinc-500 text-sm">Response Rate</p>
+            </div>
+            <div class="space-y-2">
+                <h2 class="text-4xl md:text-5xl font-black text-indigo-400">2B+</h2>
+                <p class="text-zinc-500 text-sm">Active Users</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbots Section -->
+    <section id="chatbots" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/5">
+        <div class="text-center space-y-4 mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">Chatbots That <span class="text-indigo-400">Convert</span> Visitors</h2>
+            <p class="text-sm md:text-base text-zinc-400 max-w-2xl mx-auto">Answer questions, qualify leads, and book meetings—automatically. Our AI chatbots work 24/7 to grow your business.</p>
+            <div class="pt-4">
+                <a href="https://wa.me/971558796245" class="inline-flex items-center gap-2 px-6 py-3 bg-primary-grad hover:opacity-90 text-white rounded-lg font-medium transition-colors">
+                    <i data-lucide="bot" class="w-4 h-4"></i> Get a Chatbot
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center mb-10">
+            <span class="px-4 py-1.5 rounded-full bg-white/5 text-zinc-400 text-xs border border-white/10">Our Chatbots</span>
+            <h3 class="text-2xl font-bold text-white mt-4">AI Chatbot <span class="text-indigo-400">Services</span></h3>
+            <p class="text-sm text-zinc-500 mt-2">Choose the right chatbot for your business needs</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover flex flex-col justify-between">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">Website Chatbots</h4>
+                    <p class="text-xs text-zinc-400 mb-6 h-10">Engage visitors, answer questions, and convert leads directly on your website.</p>
+                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> 24/7 availability</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Lead capture</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> FAQ automation</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Custom branding</li>
+                    </ul>
+                </div>
+                <div class="flex items-center justify-between border-t border-white/5 pt-4">
+                    <span class="text-indigo-400 font-bold text-sm">From 599 AED</span>
+                    <a href="#pricing" class="text-zinc-400 hover:text-white text-xs flex items-center gap-1">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                </div>
+            </div>
+
+            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover flex flex-col justify-between">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">Reception Bots</h4>
+                    <p class="text-xs text-zinc-400 mb-6 h-10">AI receptionist that handles inquiries, routes calls, and manages appointments.</p>
+                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Call handling</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Message routing</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Appointment booking</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Multi-language</li>
+                    </ul>
+                </div>
+                <div class="flex items-center justify-between border-t border-white/5 pt-4">
+                    <span class="text-indigo-400 font-bold text-sm">From 600 AED</span>
+                    <a href="#pricing" class="text-zinc-400 hover:text-white text-xs flex items-center gap-1">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                </div>
+            </div>
+
+            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover flex flex-col justify-between">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">Booking Bots</h4>
+                    <p class="text-xs text-zinc-400 mb-6 h-10">Automated scheduling and reservation management for any business type.</p>
+                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Calendar sync</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Reminders</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Rescheduling</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Payments</li>
+                    </ul>
+                </div>
+                <div class="flex items-center justify-between border-t border-white/5 pt-4">
+                    <span class="text-indigo-400 font-bold text-sm">From 999 AED</span>
+                    <a href="#pricing" class="text-zinc-400 hover:text-white text-xs flex items-center gap-1">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                </div>
+            </div>
+
+            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover flex flex-col justify-between">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
+                        <i data-lucide="mic" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">Voice Assistants</h4>
+                    <p class="text-xs text-zinc-400 mb-6 h-10">AI-powered voice bots for phone calls and voice-enabled interactions.</p>
+                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Natural speech</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Call automation</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> IVR replacement</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Analytics</li>
+                    </ul>
+                </div>
+                <div class="flex items-center justify-between border-t border-white/5 pt-4">
+                    <span class="text-indigo-400 font-bold text-sm">From 799 AED</span>
+                    <a href="#pricing" class="text-zinc-400 hover:text-white text-xs flex items-center gap-1">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                </div>
+            </div>
+
+            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover flex flex-col justify-between md:col-span-2 lg:col-span-1">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
+                        <i data-lucide="network" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">AI Agents with n8n</h4>
+                    <p class="text-xs text-zinc-400 mb-6 h-10">Advanced AI agents integrated with n8n for complex workflow automation.</p>
+                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> n8n integration</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Custom workflows</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> API connections</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Memory & context</li>
+                    </ul>
+                </div>
+                <div class="flex items-center justify-between border-t border-white/5 pt-4">
+                    <span class="text-indigo-400 font-bold text-sm">Custom</span>
+                    <a href="#pricing" class="text-zinc-400 hover:text-white text-xs flex items-center gap-1">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-10">
+            <h3 class="text-2xl font-bold text-white">Why Our <span class="text-indigo-400">Chatbots</span> Stand Out</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-card border border-white/5 p-8 rounded-2xl text-center card-hover">
+                <i data-lucide="message-square-dashed" class="w-6 h-6 text-indigo-400 mx-auto mb-4"></i>
+                <h4 class="font-bold text-white mb-2">Natural Conversations</h4>
+                <p class="text-xs text-zinc-400">AI that understands context and responds naturally, not like a robot.</p>
+            </div>
+            <div class="bg-card border border-white/5 p-8 rounded-2xl text-center card-hover">
+                <i data-lucide="zap" class="w-6 h-6 text-indigo-400 mx-auto mb-4"></i>
+                <h4 class="font-bold text-white mb-2">Instant Responses</h4>
+                <p class="text-xs text-zinc-400">No wait times. Your customers get answers immediately, 24/7.</p>
+            </div>
+            <div class="bg-card border border-white/5 p-8 rounded-2xl text-center card-hover">
+                <i data-lucide="blocks" class="w-6 h-6 text-indigo-400 mx-auto mb-4"></i>
+                <h4 class="font-bold text-white mb-2">Easy Integration</h4>
+                <p class="text-xs text-zinc-400">Works with your existing tools: CRM, helpdesk, calendar, and more.</p>
+            </div>
+            <div class="bg-card border border-white/5 p-8 rounded-2xl text-center card-hover">
+                <i data-lucide="user-check" class="w-6 h-6 text-indigo-400 mx-auto mb-4"></i>
+                <h4 class="font-bold text-white mb-2">Human Handoff</h4>
+                <p class="text-xs text-zinc-400">Seamlessly transfer complex conversations to human agents when needed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Grid (Custom Bots) -->
+    <section id="pricing" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/5">
+        <div class="text-center space-y-4 mb-16">
+            <span class="px-4 py-1.5 rounded-full bg-white/5 text-zinc-400 text-xs border border-white/10">Custom Services</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-white">Custom AI Bots & <span class="text-indigo-400">Automation</span> Services</h2>
+            <p class="text-sm text-zinc-400 max-w-2xl mx-auto">We design, build, and integrate AI agents that match your workflow—exactly. From simple bots to complex enterprise solutions.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Product 1 -->
+            <div class="bg-card border border-white/5 rounded-2xl p-6 flex flex-col justify-between card-hover relative">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Table Booking Bot</h3>
+                    <p class="text-xs text-zinc-400 mb-4 h-10">Automated restaurant table reservations with confirmation and reminder system.</p>
+                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> 24/7 booking</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> SMS confirmations</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Reminder system</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Calendar sync</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-2 text-xs">
+                        <span class="text-zinc-500">Setup:</span>
+                        <span class="font-bold text-white">999 AED</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4 text-xs border-b border-white/5 pb-4">
+                        <span class="text-zinc-500">Monthly:</span>
+                        <span class="font-bold text-white">199 AED</span>
+                    </div>
+                    <!-- STRIPE LINK -->
+                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-primary-grad hover:opacity-90 text-white rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
+                        Get Started <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="bg-card border border-white/5 rounded-2xl p-6 flex flex-col justify-between card-hover relative">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
+                        <i data-lucide="user" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Basic Receptionist</h3>
+                    <p class="text-xs text-zinc-400 mb-4 h-10">AI receptionist that handles calls, messages, and basic inquiries.</p>
+                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Call handling</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Message routing</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> FAQ responses</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Multi-language</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-2 text-xs">
+                        <span class="text-zinc-500">Setup:</span>
+                        <span class="font-bold text-white">600 AED</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4 text-xs border-b border-white/5 pb-4">
+                        <span class="text-zinc-500">Monthly:</span>
+                        <span class="font-bold text-white">150 AED</span>
+                    </div>
+                    <!-- STRIPE LINK -->
+                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-primary-grad hover:opacity-90 text-white rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
+                        Get Started <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="bg-card border border-white/5 rounded-2xl p-6 flex flex-col justify-between card-hover relative">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
+                        <i data-lucide="filter" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Filter Bot</h3>
+                    <p class="text-xs text-zinc-400 mb-4 h-10">Smart lead filtering and qualification bot for sales teams.</p>
+                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Lead scoring</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Auto-qualification</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> CRM integration</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Reports</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-2 text-xs">
+                        <span class="text-zinc-500">Setup:</span>
+                        <span class="font-bold text-white">850 AED</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4 text-xs border-b border-white/5 pb-4">
+                        <span class="text-zinc-500">Monthly:</span>
+                        <span class="font-bold text-white">200 AED</span>
+                    </div>
+                    <!-- STRIPE LINK -->
+                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-primary-grad hover:opacity-90 text-white rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
+                        Get Started <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 4 (Most Popular) -->
+            <div class="bg-card border border-indigo-500/50 rounded-2xl p-6 flex flex-col justify-between relative shadow-[0_0_30px_rgba(99,102,241,0.15)] z-10 hover:-translate-y-1 transition-transform">
+                <div class="absolute -top-3 left-4 bg-orange-600 text-white text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500 flex items-center justify-center text-white mb-4 shadow-lg shadow-indigo-500/40">
+                        <i data-lucide="crown" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">VIP Capture Bot</h3>
+                    <p class="text-xs text-zinc-400 mb-4 h-10">Premium lead capture with advanced nurturing and follow-up sequences.</p>
+                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Advanced nurturing</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Email sequences</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Priority routing</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Analytics</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-2 text-xs">
+                        <span class="text-zinc-500">Setup:</span>
+                        <span class="font-bold text-white">1500 AED</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4 text-xs border-b border-white/5 pb-4">
+                        <span class="text-zinc-500">Monthly:</span>
+                        <span class="font-bold text-white">350 AED</span>
+                    </div>
+                    <!-- STRIPE LINK -->
+                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-primary-grad hover:opacity-90 text-white rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
+                        Get Started <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="bg-card border border-white/5 rounded-2xl p-6 flex flex-col justify-between card-hover relative">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
+                        <i data-lucide="box" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Inventory Automation</h3>
+                    <p class="text-xs text-zinc-400 mb-4 h-10">Automated inventory tracking, alerts, and reorder management.</p>
+                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Stock tracking</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Low stock alerts</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Auto-reorders</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Reports</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-2 text-xs">
+                        <span class="text-zinc-500">Setup:</span>
+                        <span class="font-bold text-white">500 AED</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4 text-xs border-b border-white/5 pb-4">
+                        <span class="text-zinc-500">Monthly:</span>
+                        <span class="font-bold text-white">100 AED</span>
+                    </div>
+                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-primary-grad hover:opacity-90 text-white rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
+                        Get Started <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="bg-card border border-white/5 rounded-2xl p-6 flex flex-col justify-between card-hover relative">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
+                        <i data-lucide="check-square" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Task Manager Bot</h3>
+                    <p class="text-xs text-zinc-400 mb-4 h-10">AI-powered task management with reminders and team coordination.</p>
+                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Task creation</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Team assignments</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Deadline tracking</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Reminders</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-center text-xs text-zinc-500 mb-2">Custom pricing</div>
+                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-transparent border border-indigo-500 text-indigo-400 hover:bg-indigo-500/10 rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
+                        Contact for Price
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="bg-card border border-white/5 rounded-2xl p-6 flex flex-col justify-between card-hover relative">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Gmail Manager Bot</h3>
+                    <p class="text-xs text-zinc-400 mb-4 h-10">Smart email management with auto-sorting, drafting, and responses.</p>
+                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Auto-sorting</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Smart drafts</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Auto-responses</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Priority inbox</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-center text-xs text-zinc-500 mb-2">Custom pricing</div>
+                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-transparent border border-indigo-500 text-indigo-400 hover:bg-indigo-500/10 rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
+                        Contact for Price
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="bg-card border border-white/5 rounded-2xl p-6 flex flex-col justify-between card-hover relative">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
+                        <i data-lucide="clock" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Calendar Manager Bot</h3>
+                    <p class="text-xs text-zinc-400 mb-4 h-10">Intelligent calendar management with scheduling and conflict resolution.</p>
+                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Smart scheduling</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Conflict resolution</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Meeting prep</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Reminders</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-center text-xs text-zinc-500 mb-2">Custom pricing</div>
+                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-transparent border border-indigo-500 text-indigo-400 hover:bg-indigo-500/10 rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
+                        Contact for Price
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-5xl mx-auto text-center space-y-12">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">How It Works</h2>
+                <p class="text-zinc-500 text-sm">Simple process, powerful results.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 relative">
+                <div class="bg-card border border-white/5 p-6 rounded-2xl space-y-4 relative z-10 card-hover">
+                    <div class="w-12 h-12 mx-auto rounded-lg bg-primary-grad flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-purple-500/20">01</div>
+                    <h4 class="font-bold text-white">Discovery</h4>
+                    <p class="text-xs text-zinc-500">We understand your needs</p>
+                </div>
+                <div class="bg-card border border-white/5 p-6 rounded-2xl space-y-4 relative z-10 card-hover">
+                    <div class="w-12 h-12 mx-auto rounded-lg bg-primary-grad flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-purple-500/20">02</div>
+                    <h4 class="font-bold text-white">Design</h4>
+                    <p class="text-xs text-zinc-500">We plan your solution</p>
+                </div>
+                <div class="bg-card border border-white/5 p-6 rounded-2xl space-y-4 relative z-10 card-hover">
+                    <div class="w-12 h-12 mx-auto rounded-lg bg-primary-grad flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-purple-500/20">03</div>
+                    <h4 class="font-bold text-white">Build</h4>
+                    <p class="text-xs text-zinc-500">We develop and test</p>
+                </div>
+                <div class="bg-card border border-white/5 p-6 rounded-2xl space-y-4 relative z-10 card-hover">
+                    <div class="w-12 h-12 mx-auto rounded-lg bg-primary-grad flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-purple-500/20">04</div>
+                    <h4 class="font-bold text-white">Deploy</h4>
+                    <p class="text-xs text-zinc-500">We launch and support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 px-6 max-w-4xl mx-auto">
+        <div class="bg-card border border-white/5 rounded-3xl p-12 text-center space-y-6 relative overflow-hidden shadow-2xl">
+            <div class="absolute inset-0 bg-gradient-to-b from-indigo-500/10 to-transparent pointer-events-none"></div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white relative z-10">Have a Unique Requirement?</h2>
+            <p class="text-zinc-400 relative z-10 text-lg">We love challenges. Tell us what you need and we'll build it.</p>
+            <div class="pt-4 relative z-10">
+                <a href="https://wa.me/971558796245" class="inline-flex items-center gap-2 px-10 py-4 bg-primary-grad hover:opacity-90 text-white rounded-xl font-bold transition-colors shadow-lg shadow-purple-500/20">
+                    Discuss Your Project <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 px-6 bg-[#07090E]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="space-y-6 md:col-span-1">
+                <div class="flex items-center gap-2 mb-2">
+                    <img src="https://buildbyalistar.com/logo.png" alt="Logo" class="h-8 w-auto" onerror="this.style.display='none'">
+                    <span class="font-bold text-lg text-white">Build By <span class="text-indigo-400">Alistar</span></span>
+                </div>
+                <p class="text-xs text-zinc-500 leading-relaxed pr-4">Digital Skills & AI Automation. We build intelligent bots, automate workflows, and help businesses scale with cutting-edge AI solutions.</p>
+                <div class="space-y-3 text-xs text-zinc-400 pt-2">
+                    <p class="flex items-center gap-2"><i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-400"></i> buidbyalistar@gmail.com</p>
+                    <p class="flex items-center gap-2"><i data-lucide="phone" class="w-3.5 h-3.5 text-indigo-400"></i> +971 55 879 6245</p>
+                    <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-indigo-400"></i> Dubai, UAE</p>
+                </div>
+            </div>
+            
+            <div class="space-y-6">
+                <h4 class="font-bold text-white text-sm">Services</h4>
+                <ul class="space-y-3 text-sm text-zinc-400">
+                    <li><a href="#chatbots" class="hover:text-white transition-colors">AI Chatbots</a></li>
+                    <li><a href="#whatsapp" class="hover:text-white transition-colors">WhatsApp Solutions</a></li>
+                    <li><a href="#pricing" class="hover:text-white transition-colors">Workflow Automation</a></li>
+                    <li><a href="#pricing" class="hover:text-white transition-colors">Custom Bots</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-6">
+                <h4 class="font-bold text-white text-sm">Products</h4>
+                <ul class="space-y-3 text-sm text-zinc-400">
+                    <li><a href="#" class="hover:text-white transition-colors">Templates</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Courses</a></li>
+                    <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-6">
+                <h4 class="font-bold text-white text-sm">Company</h4>
+                <ul class="space-y-3 text-sm text-zinc-400">
+                    <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="https://wa.me/971558796245" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/5">
+            <p class="text-xs text-zinc-600">© 2026 Build By Alistar. All rights reserved.</p>
+            <a href="https://wa.me/971558796245" class="text-xs font-medium text-emerald-500 hover:text-emerald-400 transition-colors flex items-center gap-1">
+                Chat on WhatsApp <i data-lucide="message-square" class="w-3 h-3"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/971558796245" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center floating-wa hover:scale-110 transition-transform z-50">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </a>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
