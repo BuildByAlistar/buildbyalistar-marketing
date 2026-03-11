@@ -1,0 +1,18 @@
+{
+  "name": "buildbyalistar-functions",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "firebase-functions": "^5.1.1",
+    "openai": "^4.56.0"
+  }
+}
