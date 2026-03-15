@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarding Bot Demo</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b0f17; --panel:#141a26; --panel-border:#263246; --text:#eef2ff; --muted:#a8b3cf; --accent:#6ea8fe; --accent-strong:#3d8bfd; --user:#2b3a56; --bot:#1c2536; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:radial-gradient(circle at top,#141d2f 0%,var(--bg) 55%); color:var(--text); display:grid; place-items:center; padding:2rem 1rem; }
+    .container { width:min(100%,780px); text-align:center; }
+    h1 { margin:0 0 .5rem; font-size:clamp(1.7rem,3.2vw,2.2rem); }
+    .description { margin:0 auto 1.5rem; color:var(--muted); max-width:56ch; line-height:1.5; }
+    .chat-card { margin:0 auto; width:min(100%,700px); height:70vh; min-height:480px; max-height:760px; background:linear-gradient(180deg,#161f2f 0%,var(--panel) 100%); border:1px solid var(--panel-border); border-radius:18px; display:grid; grid-template-rows:auto 1fr auto; overflow:hidden; box-shadow:0 30px 70px rgba(0,0,0,.45); }
+    .chat-header { border-bottom:1px solid var(--panel-border); padding:.9rem 1rem; font-weight:600; color:#d7e3ff; background:rgba(12,18,29,.75); }
+    .chat-messages { padding:1rem; display:flex; flex-direction:column; gap:.75rem; overflow-y:auto; text-align:left; }
+    .message { max-width:80%; padding:.75rem .85rem; border-radius:12px; font-size:.95rem; line-height:1.4; border:1px solid transparent; word-wrap:break-word; }
+    .message.user { align-self:flex-end; background:var(--user); border-color:#445c88; }
+    .message.bot { align-self:flex-start; background:var(--bot); border-color:#2f415f; color:#dfe8ff; }
+    .composer { display:flex; gap:.6rem; padding:.9rem; border-top:1px solid var(--panel-border); background:rgba(12,18,29,.6); }
+    .composer input { flex:1; border:1px solid #33435f; background:#0f1724; color:var(--text); border-radius:10px; padding:.7rem .85rem; font-size:.95rem; }
+    .composer input:focus { outline:2px solid rgba(110,168,254,.35); border-color:var(--accent); }
+    .composer button { border:0; border-radius:10px; background:linear-gradient(180deg,var(--accent) 0%,var(--accent-strong) 100%); color:#081223; font-weight:700; padding:0 1rem; cursor:pointer; }
+    .composer button:hover { filter:brightness(1.05); }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Onboarding Bot</h1>
+    <p class="description">This demo bot greets new users and walks them through setup milestones with guided prompts.</p>
+    <section class="chat-card" aria-label="Onboarding demo chat">
+      <div class="chat-header">Onboarding Demo</div>
+      <div class="chat-messages" id="messages"><div class="message bot">Welcome! Ready to begin? Type "start".</div></div>
+      <form class="composer" id="chatForm"><input id="chatInput" type="text" placeholder="Type a message..." autocomplete="off" /><button type="submit">Send</button></form>
+    </section>
+  </main>
+  <script>
+    const form=document.getElementById('chatForm'); const input=document.getElementById('chatInput'); const messages=document.getElementById('messages');
+    function addMessage(role,text){const message=document.createElement('div'); message.className=`message ${role}`; message.textContent=text; messages.appendChild(message); messages.scrollTop=messages.scrollHeight;}
+    function getBotReply(userText){const normalized=userText.trim().toLowerCase(); if(normalized.includes('start')) return "Welcome! Let's get you set up."; return 'I can guide your onboarding. Type "start" to kick things off.';}
+    form.addEventListener('submit',(event)=>{event.preventDefault(); const text=input.value.trim(); if(!text) return; addMessage('user',text); input.value=''; setTimeout(()=>addMessage('bot',getBotReply(text)),350);});
+  </script>
+</body>
+</html>
