@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Build By Alistar | AI Automation Studio UAE</title>
+    <title>Build By Alistar | Websites, Chatbots & WhatsApp Automation</title>
     
     <!-- Meta Domain Verification -->
     <meta name="facebook-domain-verification" content="twjyvtcchw2utf0moafcl64fvr4w1a" />
@@ -32,11 +32,14 @@
             theme: {
                 extend: {
                     colors: {
-                        background: '#07090E',
-                        card: '#11141E',
-                        cardHover: '#171A26',
-                        primary: '#6B46C1', // Purplish matching the screenshot
-                        primaryHover: '#805AD5'
+                        background: '#f7f4ef',
+                        surface: '#fffdf9',
+                        card: '#ffffff',
+                        ink: '#1f2937',
+                        muted: '#5f6b7a',
+                        primary: '#6d5efc',
+                        primaryHover: '#5a4dee',
+                        accent: '#f0ebe2'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -50,749 +53,509 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        body { background-color: #07090E; color: #ffffff; overflow-x: hidden; }
 
-        .grad{
-  background:linear-gradient(90deg,#2D6BFF,#7B4DFF);
-  background-clip:text;
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  color:transparent;
-}
-
-        .bg-primary-grad {
-            background: linear-gradient(to right, #6B46C1, #8B5CF6);
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(109, 94, 252, 0.12), transparent 32%),
+                radial-gradient(circle at top right, rgba(20, 184, 166, 0.08), transparent 28%),
+                #f7f4ef;
+            color: #1f2937;
+            overflow-x: hidden;
         }
 
-        .hero-glow {
-            position: absolute;
-            top: -10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100vw;
-            height: 80vh;
-            background: radial-gradient(ellipse at top, rgba(107, 70, 193, 0.15), transparent 70%);
-            pointer-events: none;
-            z-index: -1;
+        .text-gradient {
+            background: linear-gradient(90deg, #6d5efc, #13b8a6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .bg-primary-grad {
+            background: linear-gradient(135deg, #6d5efc, #7c70ff);
+        }
+
+        .soft-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(120, 134, 156, 0.15);
+            box-shadow: 0 20px 55px rgba(55, 65, 81, 0.08);
         }
 
         .card-hover {
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
+
         .card-hover:hover {
-            transform: translateY(-5px);
-            border-color: rgba(139, 92, 246, 0.4);
-            background-color: #171A26;
-            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+            transform: translateY(-4px);
+            border-color: rgba(109, 94, 252, 0.35);
+            box-shadow: 0 24px 60px rgba(55, 65, 81, 0.12);
+        }
+
+        .nav-link {
+            color: #5f6b7a;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #1f2937;
+        }
+
+        .hero-shell,
+        .section-shell {
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(120, 134, 156, 0.12);
+            box-shadow: 0 20px 60px rgba(55, 65, 81, 0.08);
         }
 
         .floating-wa {
-            box-shadow: 0 8px 30px rgba(37,211,102,0.4);
-        }
-
-        /* Nav links hover effect */
-        .nav-link {
-            position: relative;
-            color: #A1A1AA;
-            transition: color 0.2s ease;
-        }
-        .nav-link:hover {
-            color: #ffffff;
+            box-shadow: 0 10px 28px rgba(37, 211, 102, 0.3);
         }
     </style>
 </head>
-<body class="relative antialiased text-zinc-300">
-
-    <div class="hero-glow"></div>
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-[#07090E]/90 backdrop-blur-lg border-b border-white/5">
+<body class="relative antialiased text-ink">
+    <nav class="fixed top-0 w-full z-50 bg-[#f7f4ef]/90 backdrop-blur-lg border-b border-slate-200/70">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <img src="https://buildbyalistar.com/logo.png" alt="Build By Alistar" class="h-8 w-auto" onerror="this.style.display='none'">
-                <span class="font-bold text-lg text-white tracking-tight">Build By <span class="text-orange-500">Alistar</span></span>
+            <a href="#home" class="flex items-center gap-3">
+                <img src="https://buildbyalistar.com/logo.png" alt="Build By Alistar" class="h-9 w-auto" onerror="this.style.display='none'">
+                <span class="font-bold text-lg tracking-tight text-slate-900">Build By <span class="text-violet-600">Alistar</span></span>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-6 text-[14px] font-medium">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Website Services</a>
+                <a href="#chatbots" class="nav-link">Chatbot Solutions</a>
+                <a href="#demos" class="nav-link">Demos</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-            
-            <div class="hidden lg:flex items-center gap-6 text-[13px] font-medium">
-                <a href="#" class="nav-link text-white bg-white/5 px-3 py-1.5 rounded-md">Home</a>
-                <a href="#" class="nav-link">Templates</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#whatsapp" class="nav-link">WhatsApp</a>
-                <a href="#chatbots" class="nav-link">Chatbots</a>
-                <a href="#" class="nav-link">Courses</a>
-                <a href="#pricing" class="nav-link">Pricing</a>
-                <a href="https://wa.me/971558796245" class="nav-link">Contact</a>
-            </div>
-            
+
             <div class="flex items-center gap-4">
-                <a href="https://tools.buildbyalistar.com" class="text-[13px] font-medium text-zinc-400 hover:text-white transition-colors hidden md:block">
-                    AI Tools
+                <a href="https://wa.me/971558796245" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-slate-700 border border-slate-200 hover:border-violet-300 hover:text-violet-700 transition-colors text-sm font-medium">
+                    WhatsApp
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
                 </a>
-                <button class="lg:hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <button class="lg:hidden text-slate-900" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                     <i data-lucide="menu"></i>
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-card border-b border-white/5 p-4 text-center space-y-4">
-            <a href="#" class="block text-zinc-400 font-medium">Home</a>
-            <a href="#services" class="block text-zinc-400 font-medium">Services</a>
-            <a href="#whatsapp" class="block text-zinc-400 font-medium">WhatsApp</a>
-            <a href="#chatbots" class="block text-zinc-400 font-medium">Chatbots</a>
-            <a href="#pricing" class="block text-zinc-400 font-medium">Pricing</a>
-            <a href="https://tools.buildbyalistar.com" class="block text-white font-bold bg-white/10 py-2 rounded-lg">AI Tools Hub</a>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-5 space-y-4 shadow-sm">
+            <a href="#home" class="block text-slate-700 font-medium">Home</a>
+            <a href="#about" class="block text-slate-700 font-medium">About</a>
+            <a href="#services" class="block text-slate-700 font-medium">Website Services</a>
+            <a href="#chatbots" class="block text-slate-700 font-medium">Chatbot Solutions</a>
+            <a href="#demos" class="block text-slate-700 font-medium">Demos</a>
+            <a href="#contact" class="block text-slate-700 font-medium">Contact</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="pt-40 pb-20 px-6 max-w-7xl mx-auto relative">
-        <div class="space-y-8 text-center max-w-5xl mx-auto">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-                AI Automation &amp; Multi-Task Agents for Modern Businesses
-            </h1>
-            <p class="text-lg text-zinc-400 leading-relaxed max-w-3xl mx-auto">
-                Deploy AI chatbots, automate workflows, and use AI tools to grow your business faster.
-            </p>
+    <main id="home" class="pt-32 pb-20 px-6">
+        <section class="max-w-7xl mx-auto hero-shell rounded-[2rem] p-8 md:p-12 lg:p-16 overflow-hidden relative">
+            <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(109,94,252,0.16),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(19,184,166,0.10),transparent_24%)]"></div>
+            <div class="relative grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4 max-w-3xl">
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 text-violet-700 border border-violet-100 text-xs font-semibold uppercase tracking-[0.2em]">
+                            Service-focused digital studio
+                        </span>
+                        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.05]">
+                            Professional <span class="text-gradient">websites, chatbots, and WhatsApp automation</span> for growing businesses.
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
+                            Build By Alistar helps service businesses launch polished websites, smart website chatbots, WhatsApp automation, and lightweight workflow add-ons that save time and convert more leads.
+                        </p>
+                    </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-left">
-                <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover flex flex-col">
-                    <h2 class="text-xl font-bold text-white mb-3">Start Using AI Chatbots</h2>
-                    <p class="text-sm text-zinc-400 mb-8 flex-1">Test ready-made AI chatbots built for real business use cases like booking, onboarding, customer support, and more.</p>
-                    <a href="#chatbots" class="w-full py-3 bg-primary-grad hover:opacity-90 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all shadow-lg shadow-purple-500/20">
-                        Explore Chatbots <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#services" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-primary-grad text-white font-semibold shadow-lg shadow-violet-200 hover:opacity-95 transition-opacity">
+                            Website Services
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#chatbots" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white text-slate-900 border border-slate-200 font-semibold hover:border-violet-300 transition-colors">
+                            Chatbot Solutions
+                            <i data-lucide="bot" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <div class="grid sm:grid-cols-3 gap-4 pt-2">
+                        <div class="soft-card rounded-2xl p-5">
+                            <p class="text-3xl font-bold text-slate-900">Web</p>
+                            <p class="text-sm text-slate-600 mt-2">Business websites, landing pages, and brand-led service sites.</p>
+                        </div>
+                        <div class="soft-card rounded-2xl p-5">
+                            <p class="text-3xl font-bold text-slate-900">Chat</p>
+                            <p class="text-sm text-slate-600 mt-2">Website and WhatsApp bots that support, qualify, and guide visitors.</p>
+                        </div>
+                        <div class="soft-card rounded-2xl p-5">
+                            <p class="text-3xl font-bold text-slate-900">Flow</p>
+                            <p class="text-sm text-slate-600 mt-2">Small automation add-ons for follow-ups, routing, and admin tasks.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover flex flex-col">
-                    <h2 class="text-xl font-bold text-white mb-3">Automate Your Business Workflows</h2>
-                    <p class="text-sm text-zinc-400 mb-8 flex-1">Deploy AI agents and multi-step automation systems to manage operations, customer interactions, and internal processes.</p>
-                    <a href="#services" class="w-full py-3 bg-primary-grad hover:opacity-90 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all shadow-lg shadow-purple-500/20">
-                        Explore Automation Systems <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
-
-                <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover flex flex-col">
-                    <h2 class="text-xl font-bold text-white mb-3">Explore AI Tools</h2>
-                    <p class="text-sm text-zinc-400 mb-8 flex-1">Use productivity AI tools designed to simplify work, generate content, and automate tasks.</p>
-                    <a href="https://tools.buildbyalistar.com" class="w-full py-3 bg-primary-grad hover:opacity-90 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all shadow-lg shadow-purple-500/20">
-                        Open AI Tools <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
+                <div class="soft-card rounded-[2rem] p-6 md:p-8">
+                    <div class="rounded-[1.5rem] bg-slate-900 text-white p-7 space-y-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.2em] text-slate-400">What we build</p>
+                                <h2 class="text-2xl font-semibold mt-2">Digital service systems</h2>
+                            </div>
+                            <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center">
+                                <i data-lucide="sparkles" class="w-7 h-7 text-violet-300"></i>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-sm text-slate-300">
+                            <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 mt-0.5"></i><span>Clean, modern frontends tailored for service businesses.</span></div>
+                            <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 mt-0.5"></i><span>Website and WhatsApp chatbots for lead capture, support, and follow-up.</span></div>
+                            <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 mt-0.5"></i><span>Simple automation layers that reduce manual work without overcomplicating your stack.</span></div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 pt-2">
+                            <div class="rounded-2xl bg-white/5 p-4 border border-white/10">
+                                <p class="text-xs text-slate-400 uppercase tracking-wide">Best for</p>
+                                <p class="text-sm text-white mt-2">Agencies, clinics, consultants, local businesses, and service brands.</p>
+                            </div>
+                            <div class="rounded-2xl bg-white/5 p-4 border border-white/10">
+                                <p class="text-xs text-slate-400 uppercase tracking-wide">Focus</p>
+                                <p class="text-sm text-white mt-2">Professional presentation, better response speed, and smoother inquiries.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </section>
 
-    <!-- Chatbots Section -->
-    <section id="chatbots" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/5">
-        <div class="text-center space-y-4 mb-14">
-            <span class="px-4 py-1.5 rounded-full bg-white/5 text-zinc-400 text-xs border border-white/10">AI Chatbot Showcase</span>
-            <h2 class="text-3xl md:text-5xl font-bold text-white">AI Chatbot <span class="text-indigo-400">Solutions</span></h2>
-            <p class="text-sm text-zinc-400 max-w-3xl mx-auto">Explore chatbot examples designed for real business conversations, customer support, lead capture, onboarding, and booking.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <div class="bg-card border border-white/5 p-6 rounded-2xl card-hover flex flex-col">
-                <div class="flex items-center justify-between mb-4">
-                    <span class="px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-[10px] font-semibold border border-indigo-500/20 uppercase tracking-wider">Ready Example</span>
-                    <i data-lucide="calendar-check" class="w-4 h-4 text-indigo-400"></i>
+        <section id="about" class="max-w-7xl mx-auto pt-24">
+            <div class="grid lg:grid-cols-2 gap-8 items-center">
+                <div class="soft-card rounded-[2rem] overflow-hidden min-h-[420px]">
+                    <img
+                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+                        alt="Team collaborating on digital strategy"
+                        class="w-full h-full object-cover min-h-[420px]"
+                    >
                 </div>
-                <h3 class="text-lg font-bold text-white mb-2">Booking Assistant Bot</h3>
-                <p class="text-xs text-zinc-400 mb-6 flex-1">Handles appointment and reservation requests with instant availability checks and follow-up confirmations.</p>
-                <a href="/demo/booking-assistant.html" class="w-full py-2.5 bg-primary-grad hover:opacity-90 text-white rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all shadow-lg shadow-purple-500/20">
-                    Try Demo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                <div class="space-y-6">
+                    <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.2em]">About Build By Alistar</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">A modern service-business partner for websites and conversational automation.</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        We focus on practical digital services: clean websites that present your business professionally, chatbot systems that respond instantly, and WhatsApp experiences that help prospects and customers get answers faster.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="soft-card rounded-2xl p-5">
+                            <h3 class="font-semibold text-slate-900 mb-2">Clarity first</h3>
+                            <p class="text-sm text-slate-600">Every page is designed to communicate your offer clearly and guide visitors toward action.</p>
+                        </div>
+                        <div class="soft-card rounded-2xl p-5">
+                            <h3 class="font-semibold text-slate-900 mb-2">Automation second</h3>
+                            <p class="text-sm text-slate-600">We add chat and workflow features only where they improve response time and customer experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto pt-24" aria-labelledby="home-services-title">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.2em]">Home overview</span>
+                <h2 id="home-services-title" class="text-3xl md:text-5xl font-bold text-slate-900">Service previews built around what businesses actually need.</h2>
+                <p class="text-slate-600 text-lg">A simpler structure, stronger messaging, and focused service paths instead of a crowded marketplace feel.</p>
+            </div>
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mt-12">
+                <article class="soft-card rounded-3xl p-7 card-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-violet-50 text-violet-700 flex items-center justify-center mb-5"><i data-lucide="layout-template" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Business websites</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Professional brochure sites and service pages that explain your offer clearly and make inquiries easy.</p>
+                </article>
+                <article class="soft-card rounded-3xl p-7 card-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-700 flex items-center justify-center mb-5"><i data-lucide="message-square-more" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Website chatbots</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Answer common questions, guide visitors, and keep your website responsive beyond working hours.</p>
+                </article>
+                <article class="soft-card rounded-3xl p-7 card-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-5"><i data-lucide="messages-square" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">WhatsApp solutions</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Stay responsive on the channel customers already prefer for support, booking, and sales conversations.</p>
+                </article>
+                <article class="soft-card rounded-3xl p-7 card-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center mb-5"><i data-lucide="workflow" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Small automation add-ons</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Automate follow-ups, lead routing, reminders, and other repetitive admin steps around your core service flow.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="demos" class="max-w-7xl mx-auto pt-24">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+                <div class="max-w-2xl space-y-4">
+                    <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.2em]">Demo showcase preview</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900">See how conversational flows can support real customer journeys.</h2>
+                    <p class="text-slate-600 text-lg">These previews keep the website service-led while still showing practical chatbot examples.</p>
+                </div>
+                <a href="#chatbots" class="inline-flex items-center gap-2 text-violet-700 font-semibold">Explore chatbot services <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+                <a href="/demo/booking-assistant.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
+                    <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-[0.2em] text-violet-600 font-semibold">Booking</span><i data-lucide="calendar-check-2" class="w-5 h-5 text-violet-600"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-900">Booking assistant</h3>
+                    <p class="text-sm text-slate-600 flex-1">Useful for service scheduling, reservations, and quick appointment coordination.</p>
+                    <span class="text-sm font-semibold text-slate-900">Open demo</span>
+                </a>
+                <a href="/demo/customer-support.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
+                    <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-[0.2em] text-violet-600 font-semibold">Support</span><i data-lucide="headset" class="w-5 h-5 text-violet-600"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-900">Customer support bot</h3>
+                    <p class="text-sm text-slate-600 flex-1">Ideal for FAQs, issue triage, and giving customers fast first responses.</p>
+                    <span class="text-sm font-semibold text-slate-900">Open demo</span>
+                </a>
+                <a href="/demo/lead-capture.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
+                    <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-[0.2em] text-violet-600 font-semibold">Leads</span><i data-lucide="filter" class="w-5 h-5 text-violet-600"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-900">Lead capture bot</h3>
+                    <p class="text-sm text-slate-600 flex-1">Designed to qualify inquiries, collect details, and hand over strong leads.</p>
+                    <span class="text-sm font-semibold text-slate-900">Open demo</span>
+                </a>
+                <a href="/demo/onboarding-flow.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
+                    <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-[0.2em] text-violet-600 font-semibold">Onboarding</span><i data-lucide="user-round-plus" class="w-5 h-5 text-violet-600"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-900">Onboarding flow</h3>
+                    <p class="text-sm text-slate-600 flex-1">Helpful for welcoming customers, collecting information, and routing requests cleanly.</p>
+                    <span class="text-sm font-semibold text-slate-900">Open demo</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="automation" class="max-w-7xl mx-auto pt-24">
+            <div class="section-shell rounded-[2rem] p-8 md:p-10 lg:p-12 grid lg:grid-cols-[0.9fr_1.1fr] gap-8 items-center">
+                <div class="space-y-5">
+                    <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.2em]">Small automation add-ons</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Lightweight automation that supports your service business without creating extra complexity.</h2>
+                    <p class="text-slate-600 text-lg">Think simple reminders, lead handoffs, form routing, quote request follow-ups, and support escalation triggers.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="soft-card rounded-2xl p-5">
+                        <h3 class="font-semibold text-slate-900 mb-2">Lead routing</h3>
+                        <p class="text-sm text-slate-600">Push high-intent inquiries to the right person quickly.</p>
+                    </div>
+                    <div class="soft-card rounded-2xl p-5">
+                        <h3 class="font-semibold text-slate-900 mb-2">Reminder flows</h3>
+                        <p class="text-sm text-slate-600">Keep bookings, consultations, and follow-ups on track.</p>
+                    </div>
+                    <div class="soft-card rounded-2xl p-5">
+                        <h3 class="font-semibold text-slate-900 mb-2">Inquiry handling</h3>
+                        <p class="text-sm text-slate-600">Organize contact requests from site forms and chat channels.</p>
+                    </div>
+                    <div class="soft-card rounded-2xl p-5">
+                        <h3 class="font-semibold text-slate-900 mb-2">Support escalation</h3>
+                        <p class="text-sm text-slate-600">Pass urgent cases from bot to human when needed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="max-w-7xl mx-auto pt-24">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.2em]">Website services</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900">Website services for businesses that want to look established and convert better.</h2>
+                <p class="text-slate-600 text-lg">Clear structure, modern visuals, and focused sections built for real service offers.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+                <article class="soft-card rounded-3xl p-7 card-hover">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Business websites</h3>
+                    <p class="text-sm text-slate-600 mb-5">Professional websites that explain your business, services, and contact options with confidence.</p>
+                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Ideal for established local and regional businesses</p>
+                </article>
+                <article class="soft-card rounded-3xl p-7 card-hover">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Service websites</h3>
+                    <p class="text-sm text-slate-600 mb-5">Built around your offer, customer questions, trust points, and lead generation goals.</p>
+                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Ideal for consultants, agencies, clinics, and trades</p>
+                </article>
+                <article class="soft-card rounded-3xl p-7 card-hover">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Landing pages</h3>
+                    <p class="text-sm text-slate-600 mb-5">Focused pages for campaigns, launches, and direct response offers with strong CTAs.</p>
+                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Ideal for offers, promotions, and ad traffic</p>
+                </article>
+                <article class="soft-card rounded-3xl p-7 card-hover">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Brand websites</h3>
+                    <p class="text-sm text-slate-600 mb-5">Elevated presentation for businesses that want a more polished and premium online presence.</p>
+                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Ideal for premium positioning and long-term growth</p>
+                </article>
+            </div>
+
+            <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 mt-12">
+                <div class="section-shell rounded-[2rem] p-8 md:p-10">
+                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Website service demo directions</h3>
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <div class="soft-card rounded-2xl p-5">
+                            <h4 class="font-semibold text-slate-900 mb-2">Service-first layouts</h4>
+                            <p class="text-sm text-slate-600">Clear hero, proof, offer breakdown, and contact CTA.</p>
+                        </div>
+                        <div class="soft-card rounded-2xl p-5">
+                            <h4 class="font-semibold text-slate-900 mb-2">Conversion sections</h4>
+                            <p class="text-sm text-slate-600">FAQs, process, benefits, and trust-building content blocks.</p>
+                        </div>
+                        <div class="soft-card rounded-2xl p-5">
+                            <h4 class="font-semibold text-slate-900 mb-2">Integrated chat options</h4>
+                            <p class="text-sm text-slate-600">Website and WhatsApp entry points where they make sense.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="soft-card rounded-[2rem] p-8 md:p-10">
+                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Process</h3>
+                    <div class="space-y-5">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-violet-100 text-violet-700 font-bold flex items-center justify-center shrink-0">01</div>
+                            <div><h4 class="font-semibold text-slate-900">Discovery</h4><p class="text-sm text-slate-600 mt-1">We learn your business, target audience, and the type of website you need.</p></div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-violet-100 text-violet-700 font-bold flex items-center justify-center shrink-0">02</div>
+                            <div><h4 class="font-semibold text-slate-900">Structure</h4><p class="text-sm text-slate-600 mt-1">We organize the content into clear sections that support trust and conversion.</p></div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-violet-100 text-violet-700 font-bold flex items-center justify-center shrink-0">03</div>
+                            <div><h4 class="font-semibold text-slate-900">Launch</h4><p class="text-sm text-slate-600 mt-1">We polish the experience and prepare the site for a clean Firebase deployment.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary-grad text-white font-semibold shadow-lg shadow-violet-200 hover:opacity-95 transition-opacity">
+                    Discuss Your Website Project
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </section>
+
+        <section id="chatbots" class="max-w-7xl mx-auto pt-24">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.2em]">Chatbot solutions</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900">Chatbot solutions that improve response speed, support quality, and lead handling.</h2>
+                <p class="text-slate-600 text-lg">Use chat where it adds value: on your website, in support, for sales qualification, or inside WhatsApp.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+                <article class="soft-card rounded-3xl p-7 card-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-violet-50 text-violet-700 flex items-center justify-center mb-5"><i data-lucide="monitor-smartphone" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Website chatbots</h3>
+                    <p class="text-sm text-slate-600">Give visitors quick answers while they are actively considering your service.</p>
+                </article>
+                <article class="soft-card rounded-3xl p-7 card-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-700 flex items-center justify-center mb-5"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">AI support chatbots</h3>
+                    <p class="text-sm text-slate-600">Handle common questions and route more complex support cases properly.</p>
+                </article>
+                <article class="soft-card rounded-3xl p-7 card-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center mb-5"><i data-lucide="funnel-plus" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Lead generation bots</h3>
+                    <p class="text-sm text-slate-600">Qualify interest, collect the right details, and move prospects toward your team.</p>
+                </article>
+                <article class="soft-card rounded-3xl p-7 card-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-5"><i data-lucide="message-circle-heart" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">WhatsApp chatbot solutions</h3>
+                    <p class="text-sm text-slate-600">Support conversations where customers already message, with a more natural and convenient flow.</p>
+                </article>
+            </div>
+
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mt-12">
+                <a href="/demo/booking-assistant.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
+                    <h3 class="text-lg font-semibold text-slate-900">Booking demo</h3>
+                    <p class="text-sm text-slate-600 flex-1">Shows how a chatbot can help manage appointments and availability requests.</p>
+                    <span class="text-sm font-semibold text-violet-700">Try demo</span>
+                </a>
+                <a href="/demo/customer-support.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
+                    <h3 class="text-lg font-semibold text-slate-900">Support demo</h3>
+                    <p class="text-sm text-slate-600 flex-1">Shows how a support chatbot can answer common customer questions efficiently.</p>
+                    <span class="text-sm font-semibold text-violet-700">Try demo</span>
+                </a>
+                <a href="/demo/lead-capture.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
+                    <h3 class="text-lg font-semibold text-slate-900">Lead capture demo</h3>
+                    <p class="text-sm text-slate-600 flex-1">Shows how a bot can collect, qualify, and organize sales inquiries.</p>
+                    <span class="text-sm font-semibold text-violet-700">Try demo</span>
+                </a>
+                <a href="/demo/onboarding-flow.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
+                    <h3 class="text-lg font-semibold text-slate-900">Onboarding demo</h3>
+                    <p class="text-sm text-slate-600 flex-1">Shows how conversational flows can help welcome and guide new customers.</p>
+                    <span class="text-sm font-semibold text-violet-700">Try demo</span>
                 </a>
             </div>
 
-            <div class="bg-card border border-white/5 p-6 rounded-2xl card-hover flex flex-col">
-                <div class="flex items-center justify-between mb-4">
-                    <span class="px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-[10px] font-semibold border border-indigo-500/20 uppercase tracking-wider">Business Use</span>
-                    <i data-lucide="user-plus" class="w-4 h-4 text-indigo-400"></i>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-2">Onboarding Flow Bot</h3>
-                <p class="text-xs text-zinc-400 mb-6 flex-1">Guides new customers through welcome steps, collects details, and routes them to the right service path.</p>
-                <a href="/demo/onboarding-flow.html" class="w-full py-2.5 bg-primary-grad hover:opacity-90 text-white rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all shadow-lg shadow-purple-500/20">
-                    Explore Chatbot <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
-            </div>
-
-            <div class="bg-card border border-white/5 p-6 rounded-2xl card-hover flex flex-col">
-                <div class="flex items-center justify-between mb-4">
-                    <span class="px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-[10px] font-semibold border border-indigo-500/20 uppercase tracking-wider">Demo</span>
-                    <i data-lucide="headset" class="w-4 h-4 text-indigo-400"></i>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-2">Customer Support Bot</h3>
-                <p class="text-xs text-zinc-400 mb-6 flex-1">Answers FAQs, manages repetitive support conversations, and escalates priority issues to human teams.</p>
-                <a href="/demo/customer-support.html" class="w-full py-2.5 bg-primary-grad hover:opacity-90 text-white rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all shadow-lg shadow-purple-500/20">
-                    Try Demo <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
-            </div>
-
-            <div class="bg-card border border-white/5 p-6 rounded-2xl card-hover flex flex-col">
-                <div class="flex items-center justify-between mb-4">
-                    <span class="px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-[10px] font-semibold border border-indigo-500/20 uppercase tracking-wider">Ready Example</span>
-                    <i data-lucide="funnel" class="w-4 h-4 text-indigo-400"></i>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-2">Lead Capture Bot</h3>
-                <p class="text-xs text-zinc-400 mb-6 flex-1">Qualifies incoming prospects, captures key details, and pushes high-intent leads into your sales workflow.</p>
-                <a href="/demo/lead-capture.html" class="w-full py-2.5 bg-primary-grad hover:opacity-90 text-white rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all shadow-lg shadow-purple-500/20">
-                    Explore Chatbot <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="bg-card border border-white/10 rounded-2xl p-8 md:p-10 text-center card-hover">
-            <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Need a chatbot for your business?</h3>
-            <p class="text-sm text-zinc-400 max-w-3xl mx-auto mb-8">We build custom AI chatbots for websites, WhatsApp, onboarding, customer support, booking, and lead capture.</p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#pricing" class="w-full sm:w-auto px-8 py-3 bg-primary-grad hover:opacity-90 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all shadow-lg shadow-purple-500/20">
-                    Request Custom Chatbot <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
-                <a href="https://wa.me/971558796245" class="w-full sm:w-auto px-8 py-3 border border-zinc-700 hover:bg-white/5 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
-                    Talk on WhatsApp <i data-lucide="message-square" class="w-4 h-4"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Promotional Offer Banner -->
-    <section class="px-6 pb-8 md:pb-10 max-w-7xl mx-auto">
-        <div class="bg-card border border-indigo-500/30 rounded-2xl md:rounded-3xl p-8 md:p-12 text-center shadow-2xl shadow-indigo-900/20 relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-fuchsia-500/10 to-indigo-500/10 pointer-events-none"></div>
-            <div class="relative z-10 max-w-4xl mx-auto">
-                <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-500/10 text-indigo-300 text-xs font-semibold border border-indigo-500/30 uppercase tracking-wider mb-5">Limited Offer</span>
-                <h3 class="text-2xl md:text-4xl font-bold text-white mb-4">Buy 1 Automation System, Get 1 AI Chatbot Free</h3>
-                <p class="text-sm md:text-base text-zinc-300 max-w-3xl mx-auto mb-4">Purchase any automation, workflow, or multi-task agent system and get 1 AI chatbot free for your business.</p>
-                <p class="text-xs md:text-sm text-zinc-400 max-w-3xl mx-auto mb-8">If your automation package already includes a chatbot, you still receive one additional chatbot free as promised.</p>
-                <a href="#pricing" class="inline-flex items-center justify-center px-8 py-3 bg-primary-grad hover:opacity-90 text-white rounded-lg font-semibold transition-all shadow-lg shadow-purple-500/20">
-                    Explore Automation Systems <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Grid (Custom Bots) -->
-    <section id="pricing" class="py-24 md:py-28 px-6 max-w-7xl mx-auto border-t border-white/5">
-        <div class="text-center space-y-4 mb-16">
-            <span class="px-4 py-1.5 rounded-full bg-white/5 text-zinc-400 text-xs border border-white/10">Custom Services</span>
-            <h2 class="text-3xl md:text-5xl font-bold text-white">Custom AI Bots & <span class="text-indigo-400">Automation</span> Services</h2>
-            <p class="text-sm text-zinc-400 max-w-2xl mx-auto">We design, build, and integrate AI agents that match your workflow—exactly. From simple bots to complex enterprise solutions.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Product 1 -->
-            <div class="bg-card border border-white/5 rounded-2xl p-6 flex flex-col justify-between card-hover relative">
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
-                        <i data-lucide="calendar" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Table Booking Bot</h3>
-                    <p class="text-xs text-zinc-400 mb-4 h-10">Automated restaurant table reservations with confirmation and reminder system.</p>
-                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> 24/7 booking</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> SMS confirmations</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Reminder system</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Calendar sync</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="flex justify-between items-center mb-2 text-xs">
-                        <span class="text-zinc-500">Setup:</span>
-                        <span class="font-bold text-white">999 AED</span>
-                    </div>
-                    <div class="flex justify-between items-center mb-4 text-xs border-b border-white/5 pb-4">
-                        <span class="text-zinc-500">Monthly:</span>
-                        <span class="font-bold text-white">199 AED</span>
-                    </div>
-                    <!-- STRIPE LINK -->
-                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-primary-grad hover:opacity-90 text-white rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
-                        Get Started <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i>
+            <div class="section-shell rounded-[2rem] p-8 md:p-10 lg:p-12 mt-12 text-center">
+                <h3 class="text-2xl md:text-4xl font-bold text-slate-900">Need a chatbot that fits your website or WhatsApp workflow?</h3>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto mt-4">We can shape the experience around lead qualification, service inquiries, customer support, onboarding, or appointment-related conversations.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                    <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary-grad text-white font-semibold shadow-lg shadow-violet-200 hover:opacity-95 transition-opacity">
+                        Request Chatbot Solutions
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="bg-card border border-white/5 rounded-2xl p-6 flex flex-col justify-between card-hover relative">
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
-                        <i data-lucide="user" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Basic Receptionist</h3>
-                    <p class="text-xs text-zinc-400 mb-4 h-10">AI receptionist that handles calls, messages, and basic inquiries.</p>
-                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Call handling</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Message routing</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> FAQ responses</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Multi-language</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="flex justify-between items-center mb-2 text-xs">
-                        <span class="text-zinc-500">Setup:</span>
-                        <span class="font-bold text-white">600 AED</span>
-                    </div>
-                    <div class="flex justify-between items-center mb-4 text-xs border-b border-white/5 pb-4">
-                        <span class="text-zinc-500">Monthly:</span>
-                        <span class="font-bold text-white">150 AED</span>
-                    </div>
-                    <!-- STRIPE LINK -->
-                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-primary-grad hover:opacity-90 text-white rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
-                        Get Started <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="bg-card border border-white/5 rounded-2xl p-6 flex flex-col justify-between card-hover relative">
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
-                        <i data-lucide="filter" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Filter Bot</h3>
-                    <p class="text-xs text-zinc-400 mb-4 h-10">Smart lead filtering and qualification bot for sales teams.</p>
-                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Lead scoring</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Auto-qualification</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> CRM integration</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Reports</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="flex justify-between items-center mb-2 text-xs">
-                        <span class="text-zinc-500">Setup:</span>
-                        <span class="font-bold text-white">850 AED</span>
-                    </div>
-                    <div class="flex justify-between items-center mb-4 text-xs border-b border-white/5 pb-4">
-                        <span class="text-zinc-500">Monthly:</span>
-                        <span class="font-bold text-white">200 AED</span>
-                    </div>
-                    <!-- STRIPE LINK -->
-                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-primary-grad hover:opacity-90 text-white rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
-                        Get Started <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 4 (Most Popular) -->
-            <div class="bg-card border border-indigo-500/50 rounded-2xl p-6 flex flex-col justify-between relative shadow-[0_0_30px_rgba(99,102,241,0.15)] z-10 hover:-translate-y-1 transition-transform">
-                <div class="absolute -top-3 left-4 bg-orange-600 text-white text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-indigo-500 flex items-center justify-center text-white mb-4 shadow-lg shadow-indigo-500/40">
-                        <i data-lucide="crown" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">VIP Capture Bot</h3>
-                    <p class="text-xs text-zinc-400 mb-4 h-10">Premium lead capture with advanced nurturing and follow-up sequences.</p>
-                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Advanced nurturing</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Email sequences</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Priority routing</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Analytics</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="flex justify-between items-center mb-2 text-xs">
-                        <span class="text-zinc-500">Setup:</span>
-                        <span class="font-bold text-white">1500 AED</span>
-                    </div>
-                    <div class="flex justify-between items-center mb-4 text-xs border-b border-white/5 pb-4">
-                        <span class="text-zinc-500">Monthly:</span>
-                        <span class="font-bold text-white">350 AED</span>
-                    </div>
-                    <!-- STRIPE LINK -->
-                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-primary-grad hover:opacity-90 text-white rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
-                        Get Started <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="bg-card border border-white/5 rounded-2xl p-6 flex flex-col justify-between card-hover relative">
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
-                        <i data-lucide="box" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Inventory Automation</h3>
-                    <p class="text-xs text-zinc-400 mb-4 h-10">Automated inventory tracking, alerts, and reorder management.</p>
-                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Stock tracking</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Low stock alerts</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Auto-reorders</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Reports</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="flex justify-between items-center mb-2 text-xs">
-                        <span class="text-zinc-500">Setup:</span>
-                        <span class="font-bold text-white">500 AED</span>
-                    </div>
-                    <div class="flex justify-between items-center mb-4 text-xs border-b border-white/5 pb-4">
-                        <span class="text-zinc-500">Monthly:</span>
-                        <span class="font-bold text-white">100 AED</span>
-                    </div>
-                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-primary-grad hover:opacity-90 text-white rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
-                        Get Started <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="bg-card border border-white/5 rounded-2xl p-6 flex flex-col justify-between card-hover relative">
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
-                        <i data-lucide="check-square" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Task Manager Bot</h3>
-                    <p class="text-xs text-zinc-400 mb-4 h-10">AI-powered task management with reminders and team coordination.</p>
-                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Task creation</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Team assignments</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Deadline tracking</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Reminders</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="text-center text-xs text-zinc-500 mb-2">Custom pricing</div>
-                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-transparent border border-indigo-500 text-indigo-400 hover:bg-indigo-500/10 rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
-                        Contact for Price
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 7 -->
-            <div class="bg-card border border-white/5 rounded-2xl p-6 flex flex-col justify-between card-hover relative">
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Gmail Manager Bot</h3>
-                    <p class="text-xs text-zinc-400 mb-4 h-10">Smart email management with auto-sorting, drafting, and responses.</p>
-                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Auto-sorting</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Smart drafts</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Auto-responses</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Priority inbox</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="text-center text-xs text-zinc-500 mb-2">Custom pricing</div>
-                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-transparent border border-indigo-500 text-indigo-400 hover:bg-indigo-500/10 rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
-                        Contact for Price
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 8 -->
-            <div class="bg-card border border-white/5 rounded-2xl p-6 flex flex-col justify-between card-hover relative">
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
-                        <i data-lucide="clock" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Calendar Manager Bot</h3>
-                    <p class="text-xs text-zinc-400 mb-4 h-10">Intelligent calendar management with scheduling and conflict resolution.</p>
-                    <ul class="space-y-2 text-xs text-zinc-300 mb-6">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Smart scheduling</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Conflict resolution</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Meeting prep</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Reminders</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="text-center text-xs text-zinc-500 mb-2">Custom pricing</div>
-                    <a href="https://wa.me/971558796245" class="w-full py-2.5 bg-transparent border border-indigo-500 text-indigo-400 hover:bg-indigo-500/10 rounded-lg text-sm font-medium flex items-center justify-center transition-colors">
-                        Contact for Price
+                    <a href="https://wa.me/971558796245" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white border border-slate-200 text-slate-900 font-semibold hover:border-emerald-300 transition-colors">
+                        Talk on WhatsApp
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
                     </a>
                 </div>
             </div>
+        </section>
 
-        </div>
-    </section>
-
-    <!-- WhatsApp Section -->
-    <section id="whatsapp" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/5 mt-12">
-        <div class="text-center space-y-4 mb-16">
-            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-semibold border border-emerald-500/20 uppercase tracking-wider"><i data-lucide="message-circle" class="w-3 h-3 inline-block mr-1"></i> WhatsApp Business API</span>
-            <h2 class="text-3xl md:text-5xl font-bold text-white">WhatsApp <span class="text-indigo-400">Solutions</span> for Modern Teams</h2>
-            <p class="text-sm text-zinc-400 max-w-2xl mx-auto">Broadcasts, auto-replies, and lead capture—running inside the app your customers already use. Reach your audience where they are.</p>
-            <div class="pt-2">
-                <a href="https://wa.me/971558796245" class="inline-flex items-center gap-2 px-6 py-3 bg-primary-grad hover:opacity-90 text-white rounded-lg font-medium transition-colors">
-                    <i data-lucide="message-square" class="w-4 h-4"></i> Chat on WhatsApp
-                </a>
-            </div>
-        </div>
-
-        <div class="text-center mb-10">
-            <span class="px-4 py-1.5 rounded-full bg-white/5 text-zinc-400 text-xs border border-white/10">Our Solutions</span>
-            <h3 class="text-2xl font-bold text-white mt-4">Powerful WhatsApp <span class="text-indigo-400">Automation</span></h3>
-        </div>
-
-        <!-- WhatsApp Products -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover flex flex-col">
-                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6">
-                    <i data-lucide="users" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-2">WhatsApp Lead Capture Bot</h3>
-                <p class="text-xs text-zinc-400 mb-6 h-12">Automatically capture and qualify leads through WhatsApp. Respond instantly to inquiries 24/7.</p>
-                <ul class="space-y-3 text-xs text-zinc-300 mb-8 flex-1">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Instant auto-replies</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Lead qualification</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> CRM Integration</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Multi-language support</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Analytics dashboard</li>
-                </ul>
-                <a href="#pricing" class="w-full py-2.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-sm font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors">
-                    Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
-            </div>
-
-            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover flex flex-col">
-                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6">
-                    <i data-lucide="send" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-2">WhatsApp Broadcast Bot</h3>
-                <p class="text-xs text-zinc-400 mb-6 h-12">Send personalized messages to thousands of contacts with high open rates.</p>
-                <ul class="space-y-3 text-xs text-zinc-300 mb-8 flex-1">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Bulk messaging</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Personalization tags</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Scheduled broadcasts</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Delivery tracking</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Template management</li>
-                </ul>
-                <a href="#pricing" class="w-full py-2.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-sm font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors">
-                    Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
-            </div>
-
-            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover flex flex-col">
-                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6">
-                    <i data-lucide="headphones" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-2">WhatsApp Customer Support</h3>
-                <p class="text-xs text-zinc-400 mb-6 h-12">Provide instant customer support with AI-powered responses and human handoff.</p>
-                <ul class="space-y-3 text-xs text-zinc-300 mb-8 flex-1">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> 24/7 auto-responses</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> FAQ automation</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Human handoff</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Ticket creation</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Support analytics</li>
-                </ul>
-                <a href="#pricing" class="w-full py-2.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-sm font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors">
-                    Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
-            </div>
-        </div>
-
-        <!-- Why WhatsApp Works -->
-        <div class="text-center space-y-4 mb-10">
-            <h3 class="text-2xl font-bold text-white">Why WhatsApp <span class="text-indigo-400">Works</span></h3>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            <div class="bg-card border border-white/5 p-8 rounded-2xl text-center card-hover">
-                <i data-lucide="trending-up" class="w-6 h-6 text-emerald-400 mx-auto mb-4"></i>
-                <h4 class="font-bold text-white mb-2">98% Open Rate</h4>
-                <p class="text-xs text-zinc-400">WhatsApp messages have the highest engagement compared to email or SMS.</p>
-            </div>
-            <div class="bg-card border border-white/5 p-8 rounded-2xl text-center card-hover">
-                <i data-lucide="zap" class="w-6 h-6 text-emerald-400 mx-auto mb-4"></i>
-                <h4 class="font-bold text-white mb-2">Instant Delivery</h4>
-                <p class="text-xs text-zinc-400">Messages delivered in seconds, not hours or days.</p>
-            </div>
-            <div class="bg-card border border-white/5 p-8 rounded-2xl text-center card-hover">
-                <i data-lucide="globe" class="w-6 h-6 text-emerald-400 mx-auto mb-4"></i>
-                <h4 class="font-bold text-white mb-2">Global Reach</h4>
-                <p class="text-xs text-zinc-400">Connect with customers worldwide on their preferred platform.</p>
-            </div>
-            <div class="bg-card border border-white/5 p-8 rounded-2xl text-center card-hover">
-                <i data-lucide="line-chart" class="w-6 h-6 text-emerald-400 mx-auto mb-4"></i>
-                <h4 class="font-bold text-white mb-2">Cost Effective</h4>
-                <p class="text-xs text-zinc-400">Lower cost per interaction compared to traditional channels.</p>
-            </div>
-        </div>
-
-        <!-- Stats -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div class="space-y-2">
-                <h2 class="text-4xl md:text-5xl font-black text-indigo-400">98%</h2>
-                <p class="text-zinc-500 text-sm">Message Open Rate</p>
-            </div>
-            <div class="space-y-2">
-                <h2 class="text-4xl md:text-5xl font-black text-indigo-400">45%</h2>
-                <p class="text-zinc-500 text-sm">Response Rate</p>
-            </div>
-            <div class="space-y-2">
-                <h2 class="text-4xl md:text-5xl font-black text-indigo-400">2B+</h2>
-                <p class="text-zinc-500 text-sm">Active Users</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Overview -->
-    <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="text-center space-y-4 mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-white">Services designed for fast results</h2>
-            <p class="text-sm text-zinc-400">Launch proven automation systems that reduce manual work and increase conversion rates.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- WhatsApp Bots -->
-            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover">
-                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6">
-                    <i data-lucide="message-square" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">WhatsApp Bots</h3>
-                <p class="text-sm text-zinc-400 mb-8 h-16">Convert every inquiry instantly with smart replies, lead qualification, and automated follow-ups on WhatsApp.</p>
-                <div class="pt-4 border-t border-white/5 text-xs text-zinc-500">
-                    Lead capture + support 24/7
+        <section id="contact" class="max-w-5xl mx-auto pt-24">
+            <div class="section-shell rounded-[2rem] p-8 md:p-12 text-center">
+                <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.2em]">Contact CTA</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mt-5">Ready to upgrade your website, chatbot, or WhatsApp experience?</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto mt-5">Share what you need and we can help you shape a cleaner online presence with practical automation where it matters most.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                    <a href="https://wa.me/971558796245" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary-grad text-white font-semibold shadow-lg shadow-violet-200 hover:opacity-95 transition-opacity">
+                        Start on WhatsApp
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    </a>
+                    <a href="mailto:buidbyalistar@gmail.com" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white border border-slate-200 text-slate-900 font-semibold hover:border-violet-300 transition-colors">
+                        Email Your Requirement
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                    </a>
                 </div>
             </div>
-            
-            <!-- Chatbots -->
-            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover">
-                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6">
-                    <i data-lucide="bot" class="w-6 h-6"></i>
+        </section>
+    </main>
+
+    <footer class="mt-24 py-12 px-6 border-t border-slate-200 bg-white/70">
+        <div class="max-w-7xl mx-auto grid gap-10 md:grid-cols-4">
+            <div class="md:col-span-2 space-y-5">
+                <div class="flex items-center gap-3">
+                    <img src="https://buildbyalistar.com/logo.png" alt="Build By Alistar logo" class="h-9 w-auto" onerror="this.style.display='none'">
+                    <span class="font-bold text-lg text-slate-900">Build By <span class="text-violet-600">Alistar</span></span>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Chatbots</h3>
-                <p class="text-sm text-zinc-400 mb-8 h-16">Deploy AI chatbots for your website and funnels to answer questions, qualify prospects, and book meetings.</p>
-                <div class="pt-4 border-t border-white/5 text-xs text-zinc-500">
-                    Fast onboarding for your team
+                <p class="text-slate-600 max-w-xl">Build By Alistar creates professional websites, chatbot experiences, WhatsApp chatbot solutions, and small automation add-ons for service businesses that want a cleaner digital presence.</p>
+                <div class="space-y-2 text-sm text-slate-600">
+                    <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-violet-600"></i> buidbyalistar@gmail.com</p>
+                    <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-violet-600"></i> +971 55 879 6245</p>
+                    <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-violet-600"></i> Dubai, UAE</p>
                 </div>
             </div>
-
-            <!-- AI Tools -->
-            <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover">
-                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6">
-                    <i data-lucide="terminal" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">AI Tools</h3>
-                <p class="text-sm text-zinc-400 mb-8 h-16">Access practical AI tools that improve productivity, automate workflows, and help your business scale faster.</p>
-                <div class="pt-4 border-t border-white/5 text-xs text-zinc-500">
-                    Ready to use in minutes
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Tool -->
-    <section class="py-12 px-6 max-w-7xl mx-auto">
-        <div class="bg-card border border-white/10 rounded-2xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center gap-10 card-hover">
-            <div class="absolute right-0 top-0 w-1/2 h-full bg-indigo-600/10 blur-[100px] pointer-events-none"></div>
-            <div class="flex-1 relative z-10">
-                <p class="text-[10px] font-bold tracking-widest text-zinc-500 uppercase mb-4">FEATURED TOOL</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">AI Data Entry Tool that keeps your operations moving</h2>
-                <p class="text-zinc-400 mb-8 max-w-2xl text-sm leading-relaxed">Reduce repetitive admin work with our AI Data Entry Tool. Process forms, extract details, and sync clean data into your workflows with speed and accuracy.</p>
-                <a href="https://tools.buildbyalistar.com" class="inline-flex items-center gap-2 px-8 py-3 bg-primary-grad hover:opacity-90 text-white rounded-lg font-medium transition-colors shadow-lg shadow-purple-500/20">
-                    Open AI Data Entry Tool <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="py-22 md:py-24 px-6 border-t border-white/5">
-        <div class="max-w-5xl mx-auto text-center space-y-12">
             <div>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">How It Works</h2>
-                <p class="text-zinc-500 text-sm">Simple process, powerful results.</p>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 relative">
-                <div class="bg-card border border-white/5 p-6 rounded-2xl space-y-4 relative z-10 card-hover">
-                    <div class="w-12 h-12 mx-auto rounded-lg bg-primary-grad flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-purple-500/20">01</div>
-                    <h4 class="font-bold text-white">Discovery</h4>
-                    <p class="text-xs text-zinc-500">We understand your needs</p>
-                </div>
-                <div class="bg-card border border-white/5 p-6 rounded-2xl space-y-4 relative z-10 card-hover">
-                    <div class="w-12 h-12 mx-auto rounded-lg bg-primary-grad flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-purple-500/20">02</div>
-                    <h4 class="font-bold text-white">Design</h4>
-                    <p class="text-xs text-zinc-500">We plan your solution</p>
-                </div>
-                <div class="bg-card border border-white/5 p-6 rounded-2xl space-y-4 relative z-10 card-hover">
-                    <div class="w-12 h-12 mx-auto rounded-lg bg-primary-grad flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-purple-500/20">03</div>
-                    <h4 class="font-bold text-white">Build</h4>
-                    <p class="text-xs text-zinc-500">We develop and test</p>
-                </div>
-                <div class="bg-card border border-white/5 p-6 rounded-2xl space-y-4 relative z-10 card-hover">
-                    <div class="w-12 h-12 mx-auto rounded-lg bg-primary-grad flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-purple-500/20">04</div>
-                    <h4 class="font-bold text-white">Deploy</h4>
-                    <p class="text-xs text-zinc-500">We launch and support</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="py-24 md:py-28 px-6 max-w-4xl mx-auto">
-        <div class="bg-card border border-white/5 rounded-3xl p-12 text-center space-y-6 relative overflow-hidden shadow-2xl">
-            <div class="absolute inset-0 bg-gradient-to-b from-indigo-500/10 to-transparent pointer-events-none"></div>
-            <h2 class="text-3xl md:text-4xl font-bold text-white relative z-10">Have a Unique Requirement?</h2>
-            <p class="text-zinc-400 relative z-10 text-lg">We love challenges. Tell us what you need and we'll build it.</p>
-            <div class="pt-4 relative z-10">
-                <a href="https://wa.me/971558796245" class="inline-flex items-center gap-2 px-10 py-4 bg-primary-grad hover:opacity-90 text-white rounded-xl font-bold transition-colors shadow-lg shadow-purple-500/20">
-                    Discuss Your Project <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-12 border-t border-white/5 px-6 bg-[#07090E]">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            <div class="space-y-6 md:col-span-1">
-                <div class="flex items-center gap-2 mb-2">
-                    <img src="https://buildbyalistar.com/logo.png" alt="Logo" class="h-8 w-auto" onerror="this.style.display='none'">
-                    <span class="font-bold text-lg text-white">Build By <span class="text-indigo-400">Alistar</span></span>
-                </div>
-                <p class="text-xs text-zinc-500 leading-relaxed pr-4">Digital Skills & AI Automation. We build intelligent bots, automate workflows, and help businesses scale with cutting-edge AI solutions.</p>
-                <div class="space-y-3 text-xs text-zinc-400 pt-2">
-                    <p class="flex items-center gap-2"><i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-400"></i> buidbyalistar@gmail.com</p>
-                    <p class="flex items-center gap-2"><i data-lucide="phone" class="w-3.5 h-3.5 text-indigo-400"></i> +971 55 879 6245</p>
-                    <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-indigo-400"></i> Dubai, UAE</p>
-                </div>
-            </div>
-            
-            <div class="space-y-6">
-                <h4 class="font-bold text-white text-sm">Services</h4>
-                <ul class="space-y-3 text-sm text-zinc-400">
-                    <li><a href="#chatbots" class="hover:text-white transition-colors">AI Chatbots</a></li>
-                    <li><a href="#whatsapp" class="hover:text-white transition-colors">WhatsApp Solutions</a></li>
-                    <li><a href="#pricing" class="hover:text-white transition-colors">Workflow Automation</a></li>
-                    <li><a href="#pricing" class="hover:text-white transition-colors">Custom Bots</a></li>
+                <h3 class="font-semibold text-slate-900 mb-4">Explore</h3>
+                <ul class="space-y-3 text-sm text-slate-600">
+                    <li><a href="#services" class="hover:text-violet-700 transition-colors">Website Services</a></li>
+                    <li><a href="#chatbots" class="hover:text-violet-700 transition-colors">Chatbot Solutions</a></li>
+                    <li><a href="#demos" class="hover:text-violet-700 transition-colors">Demo Showcase</a></li>
+                    <li><a href="#automation" class="hover:text-violet-700 transition-colors">Automation Add-ons</a></li>
                 </ul>
             </div>
-
-            <div class="space-y-6">
-                <h4 class="font-bold text-white text-sm">Products</h4>
-                <ul class="space-y-3 text-sm text-zinc-400">
-                    <li><a href="#" class="hover:text-white transition-colors">Templates</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">Courses</a></li>
-                    <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
-                </ul>
-            </div>
-
-            <div class="space-y-6">
-                <h4 class="font-bold text-white text-sm">Company</h4>
-                <ul class="space-y-3 text-sm text-zinc-400">
-                    <li><a href="#" class="hover:text-white transition-colors">About</a></li>
-                    <li><a href="https://wa.me/971558796245" class="hover:text-white transition-colors">Contact</a></li>
+            <div>
+                <h3 class="font-semibold text-slate-900 mb-4">Contact</h3>
+                <ul class="space-y-3 text-sm text-slate-600">
+                    <li><a href="https://wa.me/971558796245" class="hover:text-violet-700 transition-colors">WhatsApp</a></li>
+                    <li><a href="mailto:buidbyalistar@gmail.com" class="hover:text-violet-700 transition-colors">Email</a></li>
+                    <li><a href="#contact" class="hover:text-violet-700 transition-colors">Project Inquiry</a></li>
                 </ul>
             </div>
         </div>
-        
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/5">
-            <p class="text-xs text-zinc-600">© 2026 Build By Alistar. All rights reserved.</p>
-            <a href="https://wa.me/971558796245" class="text-xs font-medium text-emerald-500 hover:text-emerald-400 transition-colors flex items-center gap-1">
-                Chat on WhatsApp <i data-lucide="message-square" class="w-3 h-3"></i>
+        <div class="max-w-7xl mx-auto pt-8 mt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-slate-500">© 2026 Build By Alistar. All rights reserved.</p>
+            <a href="https://wa.me/971558796245" class="text-sm font-medium text-emerald-600 hover:text-emerald-700 transition-colors inline-flex items-center gap-2">
+                Chat on WhatsApp
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
             </a>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/971558796245" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center floating-wa hover:scale-110 transition-transform z-50">
+    <a href="https://wa.me/971558796245" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center floating-wa hover:scale-110 transition-transform z-50" aria-label="Chat on WhatsApp">
         <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
     </a>
-
 
     <script>
         // Chatbot API helper: keeps UI unchanged while routing requests through Firebase Hosting -> Functions
@@ -829,11 +592,11 @@
             panel.style.padding = "14px";
 
             const quickActions = [
+                "Website services",
                 "Recommend a chatbot",
-                "Automate my business",
                 "WhatsApp solutions",
-                "AI tools",
-                "Pricing and offers",
+                "Automation add-ons",
+                "Demo showcase",
                 "Talk to an expert"
             ];
 
@@ -841,34 +604,35 @@
                 chatbotSection: "#chatbots",
                 automationSection: "#automation",
                 whatsapp: "https://wa.me/971558796245",
-                aiTools: "#toolsphere",
+                demos: "#demos",
+                websiteServices: "#services",
                 customRequest: "#contact"
             };
 
             const intentResponses = [
                 {
-                    test: /\b(chatbot|chat bot|bot)\b/i,
-                    reply: `AI chatbots are ideal for booking, onboarding, customer support, and lead capture. For the best fit, visit the Chatbots section or request a custom chatbot for your business.\n\n• Open Chatbots section: ${links.chatbotSection}\n• Request custom chatbot: ${links.customRequest}`
+                    test: /\b(website|site|web|landing|brand website|service website)\b/i,
+                    reply: `Website services are focused on professional presentation, clearer service messaging, and better conversion paths. Explore the Website Services section to see what fits your business.\n\n• Website services: ${links.websiteServices}`
                 },
                 {
-                    test: /\b(automation|workflow|crm|approval|route|multi[-\s]?step|operations?)\b/i,
-                    reply: `Automation systems handle workflows, task routing, CRM updates, approvals, and multi-step operations across your business. Explore our automation systems to see what can be automated next.\n\n• Explore automation systems: ${links.automationSection}`
+                    test: /\b(chatbot|chat bot|bot)\b/i,
+                    reply: `Chatbot solutions are ideal for booking, onboarding, support, and lead capture. Explore the Chatbot Solutions section or request a custom setup for your business.\n\n• Chatbot solutions: ${links.chatbotSection}\n• Project inquiry: ${links.customRequest}`
+                },
+                {
+                    test: /\b(automation|workflow|follow[-\s]?up|route|reminder|operations?)\b/i,
+                    reply: `Small automation add-ons help with follow-ups, reminders, lead routing, and smoother internal handling without overcomplicating your stack.\n\n• Automation add-ons: ${links.automationSection}`
                 },
                 {
                     test: /\b(whatsapp|wa\.me|chat on whatsapp|whats app)\b/i,
-                    reply: `WhatsApp solutions help with faster replies, lead capture, support, reminders, and day-to-day customer communication. The fastest next step is to Talk on WhatsApp.\n\n• Talk on WhatsApp: ${links.whatsapp}`
+                    reply: `WhatsApp solutions help with faster replies, lead capture, support, and ongoing customer communication.\n\n• Talk on WhatsApp: ${links.whatsapp}`
                 },
                 {
-                    test: /\b(ai tools|tool|toolsphere|content|productivity|small tasks?)\b/i,
-                    reply: `AI tools are great for generating content, improving team productivity, and automating smaller repetitive tasks. Open AI Tools to explore ready-to-use options.\n\n• Open AI Tools: ${links.aiTools}`
-                },
-                {
-                    test: /\b(price|pricing|offer|package|deal|cost)\b/i,
-                    reply: "Buy 1 automation or workflow system and get 1 AI chatbot free. If the package already includes a chatbot, you still receive one extra chatbot free as promised."
+                    test: /\b(demo|showcase|preview|example)\b/i,
+                    reply: `You can explore the demo showcase to preview booking, support, lead capture, and onboarding chatbot flows.\n\n• Demo showcase: ${links.demos}`
                 },
                 {
                     test: /\b(human|expert|agent|contact|talk to someone|call me|speak)\b/i,
-                    reply: `Great choice. You can talk directly on WhatsApp or send a custom request so our team can guide you personally.\n\n• WhatsApp: ${links.whatsapp}\n• Custom request: ${links.customRequest}`
+                    reply: `Great choice. You can talk directly on WhatsApp or send your requirement through the contact section.\n\n• WhatsApp: ${links.whatsapp}\n• Contact section: ${links.customRequest}`
                 }
             ];
 
@@ -902,13 +666,13 @@
                         const data = await window.sendChatMessage(cleaned);
                         appendMessage(
                             data.reply ||
-                                "I can help with chatbots, automation systems, WhatsApp solutions, AI tools, pricing offers, or connecting you with an expert.",
+                                "I can help with website services, chatbot solutions, WhatsApp automation, demo previews, and automation add-ons for your business.",
                             "assistant"
                         );
                     }
                 } catch (error) {
                     appendMessage(
-                        "I can still guide you right now: ask about chatbots, automation, WhatsApp solutions, AI tools, pricing and offers, or talk to an expert.",
+                        "I can still guide you right now: ask about website services, chatbot solutions, WhatsApp automation, demos, or talk to an expert.",
                         "assistant"
                     );
                 } finally {
@@ -942,9 +706,9 @@
                     const button = document.createElement("button");
                     button.type = "button";
                     button.textContent = label;
-                    button.style.background = "rgba(168, 85, 247, 0.16)";
-                    button.style.border = "1px solid rgba(192, 132, 252, 0.35)";
-                    button.style.color = "#f4f4f5";
+                    button.style.background = "rgba(109, 94, 252, 0.1)";
+                    button.style.border = "1px solid rgba(109, 94, 252, 0.22)";
+                    button.style.color = "#1f2937";
                     button.style.borderRadius = "10px";
                     button.style.padding = "8px 10px";
                     button.style.fontSize = "12px";
@@ -962,9 +726,9 @@
             messages.style.display = "flex";
             messages.style.flexDirection = "column";
             messages.style.rowGap = "10px";
-            input.placeholder = "Ask about chatbots, automation, WhatsApp, or AI tools...";
+            input.placeholder = "Ask about websites, chatbots, WhatsApp, or automation...";
 
-            const greeting = "Hi! I’m the Build By Alistar AI Assistant. I can help you choose the right chatbot, automation workflow, WhatsApp solution, or AI tool for your business.";
+            const greeting = "Hi! I’m the Build By Alistar AI Assistant. I can help you choose the right website service, chatbot solution, WhatsApp setup, or simple automation flow for your business.";
             const currentAssistantMessages = [...messages.querySelectorAll(".bba-chatbot-message.assistant")];
             if (!currentAssistantMessages.some((node) => node.textContent.includes("Build By Alistar AI Assistant"))) {
                 if (currentAssistantMessages[0]) {
@@ -979,18 +743,17 @@
 
         if (!upgradeFloatingAssistant()) {
             let attempts = 0;
-            const maxAttempts = 60;
-            const waitForAssistant = setInterval(() => {
+            const maxAttempts = 10;
+            const interval = setInterval(() => {
                 attempts += 1;
                 if (upgradeFloatingAssistant() || attempts >= maxAttempts) {
-                    clearInterval(waitForAssistant);
+                    clearInterval(interval);
                 }
-            }, 150);
+            }, 500);
         }
-    </script>
-    <script src="/chatbot/chatbot.js" defer></script>
-    <script>
+
         lucide.createIcons();
     </script>
+    <script src="/chatbot/chatbot.js" defer></script>
 </body>
 </html>
