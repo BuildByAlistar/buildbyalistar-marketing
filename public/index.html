@@ -57,9 +57,9 @@
 
         body {
             background:
-                radial-gradient(circle at top left, rgba(109, 94, 252, 0.12), transparent 32%),
-                radial-gradient(circle at top right, rgba(20, 184, 166, 0.08), transparent 28%),
-                #f7f4ef;
+                radial-gradient(circle at top left, rgba(109, 94, 252, 0.14), transparent 28%),
+                radial-gradient(circle at top right, rgba(20, 184, 166, 0.08), transparent 24%),
+                linear-gradient(180deg, #f8f5ef 0%, #f3efe8 100%);
             color: #1f2937;
             overflow-x: hidden;
         }
@@ -77,16 +77,16 @@
         }
 
         .soft-card {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(120, 134, 156, 0.15);
-            box-shadow: 0 20px 55px rgba(55, 65, 81, 0.08);
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(120, 134, 156, 0.14);
+            box-shadow: 0 24px 70px rgba(55, 65, 81, 0.08);
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.68);
-            border: 1px solid rgba(255, 255, 255, 0.65);
-            box-shadow: 0 16px 40px rgba(55, 65, 81, 0.08);
-            backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 18px 45px rgba(55, 65, 81, 0.08);
+            backdrop-filter: blur(18px);
         }
 
         .card-hover {
@@ -94,9 +94,9 @@
         }
 
         .card-hover:hover {
-            transform: translateY(-4px);
-            border-color: rgba(109, 94, 252, 0.35);
-            box-shadow: 0 24px 60px rgba(55, 65, 81, 0.12);
+            transform: translateY(-6px);
+            border-color: rgba(109, 94, 252, 0.32);
+            box-shadow: 0 28px 60px rgba(55, 65, 81, 0.14);
         }
 
         .nav-link {
@@ -109,14 +109,15 @@
         }
 
         .hero-shell,
-        .section-shell {
-            background: rgba(255, 255, 255, 0.72);
+        .section-shell,
+        .cta-shell {
+            background: rgba(255, 255, 255, 0.78);
             border: 1px solid rgba(120, 134, 156, 0.12);
-            box-shadow: 0 20px 60px rgba(55, 65, 81, 0.08);
+            box-shadow: 0 22px 65px rgba(55, 65, 81, 0.08);
         }
 
         .floating-wa {
-            box-shadow: 0 10px 28px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.32);
         }
 
         .section-kicker {
@@ -125,9 +126,38 @@
 
         .hero-metric strong {
             display: block;
-            font-size: 1.75rem;
+            font-size: 1.85rem;
             line-height: 1;
             color: #0f172a;
+        }
+
+        .grid-highlight {
+            background-image:
+                linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+            background-size: 42px 42px;
+        }
+
+        .gradient-outline {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gradient-outline::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(109, 94, 252, 0.28), rgba(19, 184, 166, 0.2));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .section-anchor {
+            scroll-margin-top: 7rem;
         }
     </style>
 </head>
@@ -170,81 +200,83 @@
     </nav>
 
     <main id="home" class="pt-32 pb-20 px-6">
-        <section class="max-w-7xl mx-auto hero-shell rounded-[2rem] p-8 md:p-12 lg:p-16 overflow-hidden relative">
-            <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(109,94,252,0.16),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(19,184,166,0.10),transparent_24%)]"></div>
-            <div class="relative grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
+        <section class="max-w-7xl mx-auto hero-shell rounded-[2rem] p-8 md:p-12 lg:p-16 overflow-hidden relative section-anchor">
+            <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(109,94,252,0.16),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(19,184,166,0.1),transparent_24%)]"></div>
+            <div class="relative grid lg:grid-cols-[1.15fr_0.85fr] gap-10 xl:gap-14 items-center">
                 <div class="space-y-8">
-                    <div class="space-y-4 max-w-3xl">
+                    <div class="space-y-5 max-w-3xl">
                         <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 text-violet-700 border border-violet-100 text-xs font-semibold uppercase section-kicker">
-                            Service-focused digital studio
+                            Premium digital presence for service businesses
                         </span>
-                        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.05]">
-                            Premium <span class="text-gradient">websites, chatbots, and WhatsApp journeys</span> that turn inquiries into booked conversations.
+                        <h1 class="text-4xl md:text-6xl xl:text-7xl font-bold tracking-tight text-slate-900 leading-[1.02]">
+                            Websites, <span class="text-gradient">chatbots, and WhatsApp automation</span> designed to make your business look sharper and respond faster.
                         </h1>
                         <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
-                            Build By Alistar helps service businesses launch polished websites, smart website chatbots, and practical WhatsApp automation that makes your brand feel faster, clearer, and easier to buy from.
+                            Build By Alistar creates polished service-business frontends that help visitors trust you quickly, understand your offer clearly, and move into real conversations with less friction.
                         </p>
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#services" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-primary-grad text-white font-semibold shadow-lg shadow-violet-200 hover:opacity-95 transition-opacity">
-                            Explore Website Services
+                            Website Services
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                         <a href="#chatbots" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white text-slate-900 border border-slate-200 font-semibold hover:border-violet-300 transition-colors">
-                            See Chatbot Solutions
+                            Chatbot Solutions
                             <i data-lucide="bot" class="w-4 h-4"></i>
                         </a>
                     </div>
 
-                    <div class="glass-card rounded-3xl p-5 md:p-6">
-                        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
-                            <div class="max-w-2xl">
-                                <p class="text-sm font-semibold text-violet-700 uppercase section-kicker">Built for service brands</p>
-                                <p class="text-slate-700 text-base md:text-lg mt-2 leading-relaxed">Ideal if you need a cleaner online presence, faster first-response handling, and a simpler path from visitor interest to real conversations.</p>
-                            </div>
-                            <div class="grid grid-cols-3 gap-3 md:gap-4 min-w-full sm:min-w-[360px]">
-                                <div class="hero-metric soft-card rounded-2xl p-4 text-center">
-                                    <strong>Web</strong>
-                                    <span class="text-xs text-slate-600 mt-2 block">High-trust pages</span>
-                                </div>
-                                <div class="hero-metric soft-card rounded-2xl p-4 text-center">
-                                    <strong>Chat</strong>
-                                    <span class="text-xs text-slate-600 mt-2 block">Instant replies</span>
-                                </div>
-                                <div class="hero-metric soft-card rounded-2xl p-4 text-center">
-                                    <strong>Flow</strong>
-                                    <span class="text-xs text-slate-600 mt-2 block">Smarter follow-up</span>
-                                </div>
-                            </div>
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <div class="soft-card rounded-2xl p-5 hero-metric">
+                            <strong>Premium</strong>
+                            <span class="text-sm text-slate-600 mt-2 block">Clean, high-trust website layouts for service brands.</span>
+                        </div>
+                        <div class="soft-card rounded-2xl p-5 hero-metric">
+                            <strong>Faster</strong>
+                            <span class="text-sm text-slate-600 mt-2 block">Website and WhatsApp touchpoints that answer quickly.</span>
+                        </div>
+                        <div class="soft-card rounded-2xl p-5 hero-metric">
+                            <strong>Smoother</strong>
+                            <span class="text-sm text-slate-600 mt-2 block">Light automation flows that support follow-up and lead handling.</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="soft-card rounded-[2rem] p-6 md:p-8">
-                    <div class="rounded-[1.5rem] bg-slate-900 text-white p-7 space-y-6">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-xs uppercase tracking-[0.2em] text-slate-400">What we build</p>
-                                <h2 class="text-2xl font-semibold mt-2">Digital service systems</h2>
+                <div class="space-y-6">
+                    <div class="soft-card rounded-[2rem] p-6 md:p-7 gradient-outline">
+                        <div class="rounded-[1.5rem] bg-slate-900 text-white p-7 space-y-6 overflow-hidden relative">
+                            <div class="absolute inset-0 opacity-70 bg-[radial-gradient(circle_at_top_right,rgba(124,112,255,0.28),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(19,184,166,0.18),transparent_24%)]"></div>
+                            <div class="relative flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">What we build</p>
+                                    <h2 class="text-2xl font-semibold mt-2">A complete front-end client journey</h2>
+                                </div>
+                                <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center border border-white/10">
+                                    <i data-lucide="sparkles" class="w-7 h-7 text-violet-300"></i>
+                                </div>
                             </div>
-                            <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center">
-                                <i data-lucide="sparkles" class="w-7 h-7 text-violet-300"></i>
+                            <div class="relative space-y-4 text-sm text-slate-200">
+                                <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 mt-0.5"></i><span>Homepage messaging built to elevate trust and explain your service clearly.</span></div>
+                                <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 mt-0.5"></i><span>Website, support, lead generation, and WhatsApp chatbot experiences that feel on-brand.</span></div>
+                                <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 mt-0.5"></i><span>Elegant call-to-action paths that move visitors from interest to inquiry with confidence.</span></div>
                             </div>
                         </div>
-                        <div class="space-y-3 text-sm text-slate-300">
-                            <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 mt-0.5"></i><span>Clean, modern frontends tailored for service businesses.</span></div>
-                            <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 mt-0.5"></i><span>Website and WhatsApp chatbots for lead capture, support, and follow-up.</span></div>
-                            <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 mt-0.5"></i><span>Simple automation layers that reduce manual work without overcomplicating your stack.</span></div>
+                    </div>
+
+                    <div class="glass-card rounded-[1.75rem] p-5 md:p-6 grid gap-4 sm:grid-cols-2">
+                        <div>
+                            <p class="text-sm font-semibold text-violet-700 uppercase section-kicker">Best for</p>
+                            <p class="text-slate-700 mt-3 leading-relaxed">Consultants, agencies, clinics, local service brands, property professionals, and premium operators that need a stronger digital first impression.</p>
                         </div>
-                        <div class="grid grid-cols-2 gap-4 pt-2">
-                            <div class="rounded-2xl bg-white/5 p-4 border border-white/10">
-                                <p class="text-xs text-slate-400 uppercase tracking-wide">Best for</p>
-                                <p class="text-sm text-white mt-2">Agencies, clinics, consultants, real estate teams, and local service brands.</p>
+                        <div class="grid gap-3">
+                            <div class="soft-card rounded-2xl p-4">
+                                <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Core focus</p>
+                                <p class="text-sm text-slate-700 mt-2">Clear positioning, quicker replies, polished design, and simpler inquiry handling.</p>
                             </div>
-                            <div class="rounded-2xl bg-white/5 p-4 border border-white/10">
-                                <p class="text-xs text-slate-400 uppercase tracking-wide">Focus</p>
-                                <p class="text-sm text-white mt-2">Trust-building design, quicker replies, and smoother inquiry handling.</p>
+                            <div class="soft-card rounded-2xl p-4">
+                                <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Channels</p>
+                                <p class="text-sm text-slate-700 mt-2">Website, chatbot, contact flows, and WhatsApp follow-up.</p>
                             </div>
                         </div>
                     </div>
@@ -255,51 +287,70 @@
         <section class="max-w-7xl mx-auto pt-10">
             <div class="glass-card rounded-[2rem] p-6 md:p-8 grid lg:grid-cols-[0.9fr_1.1fr] gap-6 items-center">
                 <div class="space-y-3">
-                    <p class="text-sm font-semibold text-violet-700 uppercase section-kicker">Why clients reach out</p>
-                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900">When your business feels premium, every inquiry starts from a stronger first impression.</h2>
+                    <p class="text-sm font-semibold text-violet-700 uppercase section-kicker">Why this matters</p>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900">When your online experience feels premium and responsive, better clients are more likely to stay engaged.</h2>
                 </div>
                 <div class="grid sm:grid-cols-3 gap-4">
                     <div class="soft-card rounded-2xl p-5">
                         <p class="text-sm font-semibold text-slate-900">Clearer messaging</p>
-                        <p class="text-sm text-slate-600 mt-2">Communicate your services fast without overwhelming visitors.</p>
+                        <p class="text-sm text-slate-600 mt-2">Communicate what you do quickly so visitors understand your value without friction.</p>
                     </div>
                     <div class="soft-card rounded-2xl p-5">
-                        <p class="text-sm font-semibold text-slate-900">Faster responses</p>
-                        <p class="text-sm text-slate-600 mt-2">Use chat and WhatsApp touchpoints to reduce drop-off after hours.</p>
+                        <p class="text-sm font-semibold text-slate-900">Faster first responses</p>
+                        <p class="text-sm text-slate-600 mt-2">Use chat and WhatsApp entry points to stay available even when your team is offline.</p>
                     </div>
                     <div class="soft-card rounded-2xl p-5">
-                        <p class="text-sm font-semibold text-slate-900">Better lead quality</p>
-                        <p class="text-sm text-slate-600 mt-2">Guide people to the right service before they ever contact you.</p>
+                        <p class="text-sm font-semibold text-slate-900">Higher-quality inquiries</p>
+                        <p class="text-sm text-slate-600 mt-2">Guide prospects to the right service before they ever reach out directly.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="max-w-7xl mx-auto pt-24">
-            <div class="grid lg:grid-cols-2 gap-8 items-center">
-                <div class="soft-card rounded-[2rem] overflow-hidden min-h-[420px]">
+        <section id="about" class="max-w-7xl mx-auto pt-24 section-anchor">
+            <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 items-center">
+                <div class="soft-card rounded-[2rem] overflow-hidden min-h-[460px] relative">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent z-10"></div>
                     <img
                         src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
                         alt="Team collaborating on digital strategy"
-                        class="w-full h-full object-cover min-h-[420px]"
+                        class="w-full h-full object-cover min-h-[460px]"
                     >
+                    <div class="absolute left-6 right-6 bottom-6 z-20 glass-card rounded-2xl p-5">
+                        <p class="text-xs font-semibold uppercase section-kicker text-violet-700">Build By Alistar</p>
+                        <p class="text-slate-800 font-semibold mt-2">A front-end focused experience partner for premium service businesses.</p>
+                    </div>
                 </div>
                 <div class="space-y-6">
-                <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase section-kicker">About Build By Alistar</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">A design-led partner for businesses that want to look sharper and respond smarter.</h2>
-                <p class="text-slate-600 text-lg leading-relaxed">
-                        We focus on practical digital services: clean websites that elevate your positioning, chatbot systems that answer quickly, and WhatsApp experiences that keep the customer journey simple and convenient.
-                </p>
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <div class="soft-card rounded-2xl p-5">
-                        <h3 class="font-semibold text-slate-900 mb-2">Clarity first</h3>
-                        <p class="text-sm text-slate-600">Every page is shaped to explain your value clearly, reduce hesitation, and guide visitors toward action.</p>
+                    <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase section-kicker">About us</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">Clean design, practical automation, and customer journeys built for service businesses.</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        We focus on the front-end experience customers actually see: polished websites, guided chatbot conversations, and WhatsApp touchpoints that make your business feel more responsive, more credible, and easier to contact.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="soft-card rounded-2xl p-5">
+                            <h3 class="font-semibold text-slate-900 mb-2">Clarity first</h3>
+                            <p class="text-sm text-slate-600">Hero sections, service blocks, proof areas, and calls-to-action are designed to explain value quickly and reduce hesitation.</p>
+                        </div>
+                        <div class="soft-card rounded-2xl p-5">
+                            <h3 class="font-semibold text-slate-900 mb-2">Useful automation second</h3>
+                            <p class="text-sm text-slate-600">Chatbots and WhatsApp flows are added where they improve communication, not where they create clutter.</p>
+                        </div>
                     </div>
-                    <div class="soft-card rounded-2xl p-5">
-                        <h3 class="font-semibold text-slate-900 mb-2">Automation second</h3>
-                        <p class="text-sm text-slate-600">We add chat and workflow layers only where they make your business easier to contact and easier to manage.</p>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="soft-card rounded-2xl p-4">
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Website feel</p>
+                            <p class="text-sm font-medium text-slate-800 mt-2">Modern, premium, easy to trust</p>
+                        </div>
+                        <div class="soft-card rounded-2xl p-4">
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Chatbot role</p>
+                            <p class="text-sm font-medium text-slate-800 mt-2">Guide, qualify, support, hand off</p>
+                        </div>
+                        <div class="soft-card rounded-2xl p-4">
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-400">WhatsApp use</p>
+                            <p class="text-sm font-medium text-slate-800 mt-2">Convenient follow-up and conversation</p>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </section>
@@ -307,39 +358,39 @@
         <section class="max-w-7xl mx-auto pt-24" aria-labelledby="home-services-title">
             <div class="text-center max-w-3xl mx-auto space-y-4">
                 <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.2em]">Home overview</span>
-                <h2 id="home-services-title" class="text-3xl md:text-5xl font-bold text-slate-900">Service previews built around what businesses actually need.</h2>
-                <p class="text-slate-600 text-lg">A polished offer stack built to help service businesses look more trustworthy, responsive, and conversion-ready.</p>
+                <h2 id="home-services-title" class="text-3xl md:text-5xl font-bold text-slate-900">A complete premium UI across your most important business touchpoints.</h2>
+                <p class="text-slate-600 text-lg">From first impression to inquiry, each section is designed to feel calm, modern, and conversion-ready.</p>
             </div>
             <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mt-12">
                 <article class="soft-card rounded-3xl p-7 card-hover">
                     <div class="w-12 h-12 rounded-2xl bg-violet-50 text-violet-700 flex items-center justify-center mb-5"><i data-lucide="layout-template" class="w-6 h-6"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900 mb-3">Business websites</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Professional brochure sites and service pages that build trust fast and make inquiry steps feel effortless.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Professional website structures with strong heroes, clear service sections, trust signals, and contact-ready CTAs.</p>
                 </article>
                 <article class="soft-card rounded-3xl p-7 card-hover">
                     <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-700 flex items-center justify-center mb-5"><i data-lucide="message-square-more" class="w-6 h-6"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900 mb-3">Website chatbots</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Answer common questions, guide visitors toward the right offer, and stay responsive beyond working hours.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Branded conversational UI that helps visitors get quick answers and navigate toward the right solution.</p>
                 </article>
                 <article class="soft-card rounded-3xl p-7 card-hover">
                     <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-5"><i data-lucide="messages-square" class="w-6 h-6"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900 mb-3">WhatsApp solutions</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Stay active on the channel customers already prefer for support, booking, and sales conversations.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Fast, familiar messaging touchpoints for support, lead capture, and easy customer follow-up.</p>
                 </article>
                 <article class="soft-card rounded-3xl p-7 card-hover">
                     <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center mb-5"><i data-lucide="workflow" class="w-6 h-6"></i></div>
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Small automation add-ons</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Automate follow-ups, lead routing, reminders, and repetitive admin steps around your core service flow.</p>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Automation add-ons</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Light workflow support for reminders, lead routing, support escalation, and smoother internal follow-up.</p>
                 </article>
             </div>
         </section>
 
-        <section id="demos" class="max-w-7xl mx-auto pt-24">
+        <section id="demos" class="max-w-7xl mx-auto pt-24 section-anchor">
             <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
                 <div class="max-w-2xl space-y-4">
                     <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.2em]">Demo showcase preview</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900">See how conversational flows can support real customer journeys.</h2>
-                    <p class="text-slate-600 text-lg">Use the demos to picture how a bot can qualify leads, answer FAQs, or move customers smoothly to the next step.</p>
+                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900">Preview the kinds of chatbot journeys your business can present to customers.</h2>
+                    <p class="text-slate-600 text-lg">These demos help visualize how booking, support, lead capture, and onboarding conversations can feel inside a polished front-end experience.</p>
                 </div>
                 <a href="#chatbots" class="inline-flex items-center gap-2 text-violet-700 font-semibold">Explore chatbot services <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
             </div>
@@ -347,103 +398,114 @@
                 <a href="/demo/booking-assistant.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
                     <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-[0.2em] text-violet-600 font-semibold">Booking</span><i data-lucide="calendar-check-2" class="w-5 h-5 text-violet-600"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900">Booking assistant</h3>
-                    <p class="text-sm text-slate-600 flex-1">Useful for service scheduling, reservations, and quick appointment coordination.</p>
+                    <p class="text-sm text-slate-600 flex-1">Useful for service scheduling, reservations, and consultation requests that need a structured first step.</p>
                     <span class="text-sm font-semibold text-slate-900">Open demo</span>
                 </a>
                 <a href="/demo/customer-support.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
                     <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-[0.2em] text-violet-600 font-semibold">Support</span><i data-lucide="headset" class="w-5 h-5 text-violet-600"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900">Customer support bot</h3>
-                    <p class="text-sm text-slate-600 flex-1">Ideal for FAQs, issue triage, and giving customers fast first responses.</p>
+                    <p class="text-sm text-slate-600 flex-1">Ideal for FAQs, basic issue triage, and giving customers a fast response before a human handoff.</p>
                     <span class="text-sm font-semibold text-slate-900">Open demo</span>
                 </a>
                 <a href="/demo/lead-capture.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
                     <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-[0.2em] text-violet-600 font-semibold">Leads</span><i data-lucide="filter" class="w-5 h-5 text-violet-600"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900">Lead capture bot</h3>
-                    <p class="text-sm text-slate-600 flex-1">Designed to qualify inquiries, collect details, and hand over strong leads.</p>
+                    <p class="text-sm text-slate-600 flex-1">Designed to qualify inquiries, collect essential details, and pass stronger leads to your team.</p>
                     <span class="text-sm font-semibold text-slate-900">Open demo</span>
                 </a>
                 <a href="/demo/onboarding-flow.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
                     <div class="flex items-center justify-between"><span class="text-xs uppercase tracking-[0.2em] text-violet-600 font-semibold">Onboarding</span><i data-lucide="user-round-plus" class="w-5 h-5 text-violet-600"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900">Onboarding flow</h3>
-                    <p class="text-sm text-slate-600 flex-1">Helpful for welcoming customers, collecting information, and routing requests cleanly.</p>
+                    <p class="text-sm text-slate-600 flex-1">Helpful for welcoming customers, collecting requirements, and guiding them into the next stage smoothly.</p>
                     <span class="text-sm font-semibold text-slate-900">Open demo</span>
                 </a>
             </div>
         </section>
 
-        <section id="automation" class="max-w-7xl mx-auto pt-24">
-            <div class="section-shell rounded-[2rem] p-8 md:p-10 lg:p-12 grid lg:grid-cols-[0.9fr_1.1fr] gap-8 items-center">
-                <div class="space-y-5">
+        <section id="automation" class="max-w-7xl mx-auto pt-24 section-anchor">
+            <div class="section-shell rounded-[2rem] p-8 md:p-10 lg:p-12 grid lg:grid-cols-[0.9fr_1.1fr] gap-8 items-center overflow-hidden relative">
+                <div class="absolute inset-0 grid-highlight opacity-30 pointer-events-none"></div>
+                <div class="relative space-y-5">
                     <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.2em]">Small automation add-ons</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Lightweight automation that supports your service business without adding unnecessary complexity.</h2>
-                    <p class="text-slate-600 text-lg">Think reminders, lead handoffs, form routing, quote follow-ups, and support escalation triggers that keep your team moving faster.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Simple automation support that complements your website and chat experience without overcomplicating it.</h2>
+                    <p class="text-slate-600 text-lg">Think reminders, lead routing, quote follow-ups, form-to-chat handoffs, and support escalation triggers that keep your service flow organized.</p>
                 </div>
-                <div class="grid sm:grid-cols-2 gap-4">
+                <div class="relative grid sm:grid-cols-2 gap-4">
                     <div class="soft-card rounded-2xl p-5">
                         <h3 class="font-semibold text-slate-900 mb-2">Lead routing</h3>
-                        <p class="text-sm text-slate-600">Push high-intent inquiries to the right person quickly.</p>
+                        <p class="text-sm text-slate-600">Send the right inquiry to the right person faster.</p>
                     </div>
                     <div class="soft-card rounded-2xl p-5">
                         <h3 class="font-semibold text-slate-900 mb-2">Reminder flows</h3>
-                        <p class="text-sm text-slate-600">Keep bookings, consultations, and follow-ups on track.</p>
+                        <p class="text-sm text-slate-600">Support bookings, consultations, and follow-up conversations with cleaner timing.</p>
                     </div>
                     <div class="soft-card rounded-2xl p-5">
                         <h3 class="font-semibold text-slate-900 mb-2">Inquiry handling</h3>
-                        <p class="text-sm text-slate-600">Organize contact requests from site forms and chat channels.</p>
+                        <p class="text-sm text-slate-600">Connect forms, chatbot prompts, and WhatsApp entry points into a smoother journey.</p>
                     </div>
                     <div class="soft-card rounded-2xl p-5">
                         <h3 class="font-semibold text-slate-900 mb-2">Support escalation</h3>
-                        <p class="text-sm text-slate-600">Pass urgent cases from bot to human when needed.</p>
+                        <p class="text-sm text-slate-600">Move urgent or qualified cases from bot to human with less friction.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="max-w-7xl mx-auto pt-24">
+        <section id="services" class="max-w-7xl mx-auto pt-24 section-anchor">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
                 <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.2em]">Website services</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-slate-900">Website services for businesses that want to look established and convert better.</h2>
-                <p class="text-slate-600 text-lg">Clear structure, modern visuals, and conversion-minded sections built around real service offers.</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900">Website services built to help service businesses look established, premium, and easy to contact.</h2>
+                <p class="text-slate-600 text-lg">Each direction is designed around clear structure, strong service messaging, modern visual polish, and conversion-friendly user flow.</p>
             </div>
 
             <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
                 <article class="soft-card rounded-3xl p-7 card-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-violet-50 text-violet-700 flex items-center justify-center mb-5"><i data-lucide="briefcase-business" class="w-6 h-6"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900 mb-3">Business websites</h3>
-                    <p class="text-sm text-slate-600 mb-5">Professional websites that introduce your business with confidence and make next steps obvious.</p>
+                    <p class="text-sm text-slate-600 mb-5">Professional brochure-style websites that present your company clearly and make next steps feel easy.</p>
                     <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Ideal for established local and regional businesses</p>
                 </article>
                 <article class="soft-card rounded-3xl p-7 card-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-700 flex items-center justify-center mb-5"><i data-lucide="building-2" class="w-6 h-6"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900 mb-3">Service websites</h3>
-                    <p class="text-sm text-slate-600 mb-5">Built around your offer, customer questions, trust signals, and lead generation goals.</p>
-                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Ideal for consultants, agencies, clinics, and trades</p>
+                    <p class="text-sm text-slate-600 mb-5">Pages structured around your offer, outcomes, FAQs, credibility, and high-intent contact action.</p>
+                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Ideal for consultants, clinics, agencies, and trades</p>
                 </article>
                 <article class="soft-card rounded-3xl p-7 card-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center mb-5"><i data-lucide="panel-top-open" class="w-6 h-6"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900 mb-3">Landing pages</h3>
-                    <p class="text-sm text-slate-600 mb-5">Focused pages for campaigns, launches, and direct-response offers with stronger calls to action.</p>
-                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Ideal for offers, promotions, and ad traffic</p>
+                    <p class="text-sm text-slate-600 mb-5">Focused pages for promotions, paid traffic, lead magnets, or single-service campaigns that need a strong CTA.</p>
+                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Ideal for offers, launches, and direct-response traffic</p>
                 </article>
                 <article class="soft-card rounded-3xl p-7 card-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-rose-50 text-rose-700 flex items-center justify-center mb-5"><i data-lucide="badge-check" class="w-6 h-6"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900 mb-3">Brand websites</h3>
-                    <p class="text-sm text-slate-600 mb-5">Elevated presentation for businesses that want a polished, premium online presence.</p>
+                    <p class="text-sm text-slate-600 mb-5">Elevated presentation for businesses that want a stronger premium impression and a more refined visual identity online.</p>
                     <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Ideal for premium positioning and long-term growth</p>
                 </article>
             </div>
 
-            <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 mt-12">
+            <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 mt-12">
                 <div class="section-shell rounded-[2rem] p-8 md:p-10">
-                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Website service demo directions</h3>
+                    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+                        <div>
+                            <p class="text-sm font-semibold text-violet-700 uppercase section-kicker">Service demos</p>
+                            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">What the website UI should communicate at a glance.</h3>
+                        </div>
+                        <a href="#contact" class="text-sm font-semibold text-violet-700 inline-flex items-center gap-2">Start a project <i data-lucide="move-right" class="w-4 h-4"></i></a>
+                    </div>
                     <div class="grid sm:grid-cols-3 gap-4">
                         <div class="soft-card rounded-2xl p-5">
                             <h4 class="font-semibold text-slate-900 mb-2">Service-first layouts</h4>
-                            <p class="text-sm text-slate-600">Clear hero, proof, offer breakdown, and contact CTA.</p>
+                            <p class="text-sm text-slate-600">Hero, credibility, offer breakdown, process, and inquiry CTA sections.</p>
                         </div>
                         <div class="soft-card rounded-2xl p-5">
                             <h4 class="font-semibold text-slate-900 mb-2">Conversion sections</h4>
-                            <p class="text-sm text-slate-600">FAQs, process, benefits, and trust-building content blocks.</p>
+                            <p class="text-sm text-slate-600">Benefits, FAQs, use cases, trust indicators, and clear action points.</p>
                         </div>
                         <div class="soft-card rounded-2xl p-5">
                             <h4 class="font-semibold text-slate-900 mb-2">Integrated chat options</h4>
-                            <p class="text-sm text-slate-600">Website and WhatsApp entry points where they make sense.</p>
+                            <p class="text-sm text-slate-600">Website chatbot and WhatsApp handoff placed where response speed matters.</p>
                         </div>
                     </div>
                 </div>
@@ -452,15 +514,15 @@
                     <div class="space-y-5">
                         <div class="flex gap-4">
                             <div class="w-10 h-10 rounded-xl bg-violet-100 text-violet-700 font-bold flex items-center justify-center shrink-0">01</div>
-                            <div><h4 class="font-semibold text-slate-900">Discovery</h4><p class="text-sm text-slate-600 mt-1">We learn your business, target audience, and the type of website you need.</p></div>
+                            <div><h4 class="font-semibold text-slate-900">Discovery</h4><p class="text-sm text-slate-600 mt-1">Understand the business, services, customer profile, and what the site needs to achieve first.</p></div>
                         </div>
                         <div class="flex gap-4">
                             <div class="w-10 h-10 rounded-xl bg-violet-100 text-violet-700 font-bold flex items-center justify-center shrink-0">02</div>
-                            <div><h4 class="font-semibold text-slate-900">Structure</h4><p class="text-sm text-slate-600 mt-1">We organize the content into clear sections that support trust and conversion.</p></div>
+                            <div><h4 class="font-semibold text-slate-900">Structure & polish</h4><p class="text-sm text-slate-600 mt-1">Organize the UI into clear sections with premium spacing, hierarchy, and calls to action.</p></div>
                         </div>
                         <div class="flex gap-4">
                             <div class="w-10 h-10 rounded-xl bg-violet-100 text-violet-700 font-bold flex items-center justify-center shrink-0">03</div>
-                            <div><h4 class="font-semibold text-slate-900">Launch</h4><p class="text-sm text-slate-600 mt-1">We polish the experience and prepare the site for a clean Firebase deployment.</p></div>
+                            <div><h4 class="font-semibold text-slate-900">Launch-ready experience</h4><p class="text-sm text-slate-600 mt-1">Refine front-end details so the final website feels clean, complete, and ready for deployment.</p></div>
                         </div>
                     </div>
                 </div>
@@ -471,83 +533,120 @@
                     <p class="text-sm font-semibold text-violet-700 uppercase section-kicker">What a stronger website should do</p>
                     <ul class="mt-6 space-y-4 text-slate-600">
                         <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0"></i><span>Position your business clearly within the first few seconds.</span></li>
-                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0"></i><span>Make visitors feel confident about quality, professionalism, and responsiveness.</span></li>
-                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0"></i><span>Give prospects multiple easy ways to take the next step without confusion.</span></li>
+                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0"></i><span>Make prospects feel confident about quality, professionalism, and responsiveness.</span></li>
+                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0"></i><span>Offer simple pathways into contact, chat, or WhatsApp without confusion.</span></li>
                     </ul>
                 </div>
                 <div class="section-shell rounded-[2rem] p-8 md:p-10">
-                    <p class="text-sm font-semibold text-violet-700 uppercase section-kicker">Messaging direction</p>
+                    <p class="text-sm font-semibold text-violet-700 uppercase section-kicker">Positioning direction</p>
                     <blockquote class="mt-5 text-2xl md:text-3xl font-semibold text-slate-900 leading-tight">
-                        “Your website should feel like your best salesperson — clear, credible, and ready to guide every visitor.”
+                        “A great service website should feel calm, credible, and ready to guide the visitor toward action.”
                     </blockquote>
-                    <p class="text-slate-600 text-base md:text-lg mt-5">That principle shapes every section, CTA, chatbot prompt, and contact pathway across the experience.</p>
+                    <p class="text-slate-600 text-base md:text-lg mt-5">That principle shapes the hero, cards, process layout, chatbot prompts, and final contact CTA across the page.</p>
                 </div>
             </div>
 
-            <div class="text-center mt-12">
-                <a href="#contact" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary-grad text-white font-semibold shadow-lg shadow-violet-200 hover:opacity-95 transition-opacity">
+            <div class="cta-shell rounded-[2rem] p-8 md:p-10 mt-12 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                <div class="max-w-2xl">
+                    <p class="text-sm font-semibold text-violet-700 uppercase section-kicker">Website CTA</p>
+                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">Need a business website, service website, landing page, or premium brand refresh?</h3>
+                    <p class="text-slate-600 text-lg mt-3">We can help shape the direction around clarity, trust, and a stronger first impression.</p>
+                </div>
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary-grad text-white font-semibold shadow-lg shadow-violet-200 hover:opacity-95 transition-opacity">
                     Discuss Your Website Project
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
         </section>
 
-        <section id="chatbots" class="max-w-7xl mx-auto pt-24">
+        <section id="chatbots" class="max-w-7xl mx-auto pt-24 section-anchor">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
                 <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.2em]">Chatbot solutions</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-slate-900">Chatbot solutions that improve response speed, support quality, and lead handling.</h2>
-                <p class="text-slate-600 text-lg">Use chat where it adds value: on your website, in support, for lead qualification, or inside WhatsApp.</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900">Chatbot solutions that feel premium on the front end while making response handling easier behind the scenes.</h2>
+                <p class="text-slate-600 text-lg">From website chat to support flows and WhatsApp journeys, the UI is designed to stay clear, helpful, and aligned with a service-business brand.</p>
             </div>
 
             <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
                 <article class="soft-card rounded-3xl p-7 card-hover">
                     <div class="w-12 h-12 rounded-2xl bg-violet-50 text-violet-700 flex items-center justify-center mb-5"><i data-lucide="monitor-smartphone" class="w-6 h-6"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900 mb-3">Website chatbots</h3>
-                    <p class="text-sm text-slate-600">Give visitors quick answers while they are actively considering your service.</p>
+                    <p class="text-sm text-slate-600">Give visitors quick answers while they are actively considering your service or comparing options.</p>
                 </article>
                 <article class="soft-card rounded-3xl p-7 card-hover">
                     <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-700 flex items-center justify-center mb-5"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900 mb-3">AI support chatbots</h3>
-                    <p class="text-sm text-slate-600">Handle common questions and route more complex support cases properly.</p>
+                    <p class="text-sm text-slate-600">Handle common questions, triage requests, and make support feel more responsive from the first message.</p>
                 </article>
                 <article class="soft-card rounded-3xl p-7 card-hover">
                     <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center mb-5"><i data-lucide="funnel-plus" class="w-6 h-6"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900 mb-3">Lead generation bots</h3>
-                    <p class="text-sm text-slate-600">Qualify interest, collect the right details, and move prospects toward your team.</p>
+                    <p class="text-sm text-slate-600">Qualify interest, collect key details, and hand over better leads for your team to close.</p>
                 </article>
                 <article class="soft-card rounded-3xl p-7 card-hover">
                     <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-5"><i data-lucide="message-circle-heart" class="w-6 h-6"></i></div>
                     <h3 class="text-xl font-semibold text-slate-900 mb-3">WhatsApp chatbot solutions</h3>
-                    <p class="text-sm text-slate-600">Support conversations where customers already message, with a more natural and convenient experience.</p>
+                    <p class="text-sm text-slate-600">Support conversations on the channel customers already know and prefer, without losing polish.</p>
                 </article>
             </div>
 
-            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mt-12">
-                <a href="/demo/booking-assistant.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
-                    <h3 class="text-lg font-semibold text-slate-900">Booking demo</h3>
-                    <p class="text-sm text-slate-600 flex-1">Shows how a chatbot can help manage appointments and availability requests.</p>
-                    <span class="text-sm font-semibold text-violet-700">Try demo</span>
-                </a>
-                <a href="/demo/customer-support.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
-                    <h3 class="text-lg font-semibold text-slate-900">Support demo</h3>
-                    <p class="text-sm text-slate-600 flex-1">Shows how a support chatbot can answer common customer questions efficiently.</p>
-                    <span class="text-sm font-semibold text-violet-700">Try demo</span>
-                </a>
-                <a href="/demo/lead-capture.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
-                    <h3 class="text-lg font-semibold text-slate-900">Lead capture demo</h3>
-                    <p class="text-sm text-slate-600 flex-1">Shows how a bot can collect, qualify, and organize sales inquiries.</p>
-                    <span class="text-sm font-semibold text-violet-700">Try demo</span>
-                </a>
-                <a href="/demo/onboarding-flow.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
-                    <h3 class="text-lg font-semibold text-slate-900">Onboarding demo</h3>
-                    <p class="text-sm text-slate-600 flex-1">Shows how conversational flows can help welcome and guide new customers.</p>
-                    <span class="text-sm font-semibold text-violet-700">Try demo</span>
-                </a>
+            <div class="grid lg:grid-cols-[0.92fr_1.08fr] gap-8 mt-12">
+                <div class="soft-card rounded-[2rem] p-8 md:p-10">
+                    <p class="text-sm font-semibold text-violet-700 uppercase section-kicker">Typical outcomes</p>
+                    <div class="grid sm:grid-cols-2 gap-4 mt-6">
+                        <div class="rounded-2xl bg-violet-50/70 border border-violet-100 p-5">
+                            <h3 class="font-semibold text-slate-900">Faster qualification</h3>
+                            <p class="text-sm text-slate-600 mt-2">Ask the right questions early so your team receives clearer, better-prepared inquiries.</p>
+                        </div>
+                        <div class="rounded-2xl bg-white border border-slate-200 p-5">
+                            <h3 class="font-semibold text-slate-900">Better support flow</h3>
+                            <p class="text-sm text-slate-600 mt-2">Answer FAQs and route complex issues without making customers feel stuck.</p>
+                        </div>
+                        <div class="rounded-2xl bg-white border border-slate-200 p-5">
+                            <h3 class="font-semibold text-slate-900">Branded interaction</h3>
+                            <p class="text-sm text-slate-600 mt-2">Keep the chatbot UI calm, elegant, and aligned with the website's premium feel.</p>
+                        </div>
+                        <div class="rounded-2xl bg-teal-50/70 border border-teal-100 p-5">
+                            <h3 class="font-semibold text-slate-900">Smoother handoff</h3>
+                            <p class="text-sm text-slate-600 mt-2">Move users into WhatsApp, forms, or human support with less friction.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-shell rounded-[2rem] p-8 md:p-10">
+                    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+                        <div>
+                            <p class="text-sm font-semibold text-violet-700 uppercase section-kicker">Demo cards</p>
+                            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">Explore chatbot journey previews.</h3>
+                        </div>
+                        <a href="#demos" class="text-sm font-semibold text-violet-700 inline-flex items-center gap-2">See all demos <i data-lucide="move-right" class="w-4 h-4"></i></a>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <a href="/demo/booking-assistant.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
+                            <h3 class="text-lg font-semibold text-slate-900">Booking demo</h3>
+                            <p class="text-sm text-slate-600 flex-1">A guided appointment-style flow for consultations, reservations, or service scheduling.</p>
+                            <span class="text-sm font-semibold text-violet-700">Try demo</span>
+                        </a>
+                        <a href="/demo/customer-support.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
+                            <h3 class="text-lg font-semibold text-slate-900">Support demo</h3>
+                            <p class="text-sm text-slate-600 flex-1">A support-oriented flow that answers common questions and keeps users moving.</p>
+                            <span class="text-sm font-semibold text-violet-700">Try demo</span>
+                        </a>
+                        <a href="/demo/lead-capture.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
+                            <h3 class="text-lg font-semibold text-slate-900">Lead capture demo</h3>
+                            <p class="text-sm text-slate-600 flex-1">A qualification flow for collecting inquiry details before a human follow-up.</p>
+                            <span class="text-sm font-semibold text-violet-700">Try demo</span>
+                        </a>
+                        <a href="/demo/onboarding-flow.html" class="soft-card rounded-3xl p-6 card-hover flex flex-col gap-4">
+                            <h3 class="text-lg font-semibold text-slate-900">Onboarding demo</h3>
+                            <p class="text-sm text-slate-600 flex-1">A welcoming flow for gathering new client information and guiding next steps.</p>
+                            <span class="text-sm font-semibold text-violet-700">Try demo</span>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="section-shell rounded-[2rem] p-8 md:p-10 lg:p-12 mt-12 text-center">
-                <h3 class="text-2xl md:text-4xl font-bold text-slate-900">Need a chatbot that fits your website or WhatsApp workflow?</h3>
-                <p class="text-slate-600 text-lg max-w-3xl mx-auto mt-4">We can shape the experience around lead qualification, service inquiries, customer support, onboarding, or appointment-related conversations that still feel on-brand.</p>
+            <div class="cta-shell rounded-[2rem] p-8 md:p-10 lg:p-12 mt-12 text-center">
+                <h3 class="text-2xl md:text-4xl font-bold text-slate-900">Need chatbot UI that fits your website, support flow, lead capture, or WhatsApp journey?</h3>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto mt-4">The experience can be shaped around lead qualification, service inquiries, customer support, onboarding, or appointment-related conversations while still feeling polished and premium.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
                     <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary-grad text-white font-semibold shadow-lg shadow-violet-200 hover:opacity-95 transition-opacity">
                         Request Chatbot Solutions
@@ -561,55 +660,37 @@
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto pt-24">
-            <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-8">
-                <div class="section-shell rounded-[2rem] p-8 md:p-10">
-                    <p class="text-sm font-semibold text-violet-700 uppercase section-kicker">Typical use cases</p>
-                    <div class="grid sm:grid-cols-2 gap-4 mt-6">
+        <section id="contact" class="max-w-5xl mx-auto pt-24 section-anchor">
+            <div class="section-shell rounded-[2rem] p-8 md:p-12 text-center overflow-hidden relative">
+                <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_left,rgba(109,94,252,0.14),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(19,184,166,0.08),transparent_20%)]"></div>
+                <div class="relative">
+                    <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.2em]">Contact CTA</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mt-5">Ready to launch a sharper website, better chatbot experience, or cleaner WhatsApp journey?</h2>
+                    <p class="text-slate-600 text-lg max-w-3xl mx-auto mt-5">Share your business type, your offer, and where your current digital experience feels weak. We can help shape a premium front-end direction that feels complete and professional.</p>
+                    <div class="grid md:grid-cols-3 gap-4 mt-8 text-left">
                         <div class="soft-card rounded-2xl p-5">
-                            <h3 class="font-semibold text-slate-900">Lead capture</h3>
-                            <p class="text-sm text-slate-600 mt-2">Collect the right information before a human follow-up.</p>
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Website focus</p>
+                            <p class="text-sm text-slate-700 mt-2">Service pages, landing pages, premium brand presentation, and conversion-ready structure.</p>
                         </div>
                         <div class="soft-card rounded-2xl p-5">
-                            <h3 class="font-semibold text-slate-900">Instant FAQs</h3>
-                            <p class="text-sm text-slate-600 mt-2">Reduce repetitive questions and answer faster after hours.</p>
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Chatbot focus</p>
+                            <p class="text-sm text-slate-700 mt-2">Lead capture, support guidance, booking flow, and on-brand conversation design.</p>
                         </div>
                         <div class="soft-card rounded-2xl p-5">
-                            <h3 class="font-semibold text-slate-900">Booking journeys</h3>
-                            <p class="text-sm text-slate-600 mt-2">Move prospects toward consultations, appointments, or demos.</p>
-                        </div>
-                        <div class="soft-card rounded-2xl p-5">
-                            <h3 class="font-semibold text-slate-900">Human handoff</h3>
-                            <p class="text-sm text-slate-600 mt-2">Escalate smoothly when conversations need a real person.</p>
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-400">WhatsApp focus</p>
+                            <p class="text-sm text-slate-700 mt-2">Fast customer communication, follow-up convenience, and easier inquiry handling.</p>
                         </div>
                     </div>
-                </div>
-                <div class="soft-card rounded-[2rem] p-8 md:p-10">
-                    <p class="text-sm font-semibold text-violet-700 uppercase section-kicker">Client experience goal</p>
-                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mt-4">Make every touchpoint feel premium, responsive, and easy to trust.</h3>
-                    <p class="text-slate-600 text-base md:text-lg mt-5">From the homepage to the chatbot to WhatsApp, the experience should feel consistent: fewer delays, clearer guidance, and less friction for serious buyers.</p>
-                    <a href="#contact" class="inline-flex items-center gap-2 mt-8 text-violet-700 font-semibold">
-                        Plan your customer journey
-                        <i data-lucide="move-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="max-w-5xl mx-auto pt-24">
-            <div class="section-shell rounded-[2rem] p-8 md:p-12 text-center">
-                <span class="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-[0.2em]">Contact CTA</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mt-5">Ready to give your brand a sharper website and a smarter response flow?</h2>
-                <p class="text-slate-600 text-lg max-w-3xl mx-auto mt-5">Share your goals, audience, and current bottlenecks, and we can recommend a focused website, chatbot, or WhatsApp direction that fits your business.</p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-                    <a href="https://wa.me/971559352926?text=Hi%20I%20am%20interested%20in%20your%20services" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary-grad text-white font-semibold shadow-lg shadow-violet-200 hover:opacity-95 transition-opacity">
-                        Start Your Consultation
-                        <i data-lucide="message-circle" class="w-4 h-4"></i>
-                    </a>
-                    <a href="mailto:buidbyalistar@gmail.com" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white border border-slate-200 text-slate-900 font-semibold hover:border-violet-300 transition-colors">
-                        Email Your Project Brief
-                        <i data-lucide="mail" class="w-4 h-4"></i>
-                    </a>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                        <a href="https://wa.me/971559352926?text=Hi%20I%20am%20interested%20in%20your%20services" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary-grad text-white font-semibold shadow-lg shadow-violet-200 hover:opacity-95 transition-opacity">
+                            Start Your Consultation
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        </a>
+                        <a href="mailto:buidbyalistar@gmail.com" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white border border-slate-200 text-slate-900 font-semibold hover:border-violet-300 transition-colors">
+                            Email Your Project Brief
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -622,7 +703,7 @@
                     <img src="https://buildbyalistar.com/logo.png" alt="Build By Alistar logo" class="h-9 w-auto" onerror="this.style.display='none'">
                     <span class="font-bold text-lg text-slate-900">Build By <span class="text-violet-600">Alistar</span></span>
                 </div>
-                <p class="text-slate-600 max-w-xl">Build By Alistar creates conversion-focused websites, guided chatbot experiences, WhatsApp solutions, and simple automation add-ons for service businesses that want a cleaner digital presence.</p>
+                <p class="text-slate-600 max-w-xl">Build By Alistar creates polished websites, guided chatbot experiences, WhatsApp solutions, and lightweight automation add-ons for service businesses that want a cleaner digital presence.</p>
                 <div class="space-y-2 text-sm text-slate-600">
                     <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-violet-600"></i> buidbyalistar@gmail.com</p>
                     <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-violet-600"></i> +971 55 879 6245</p>
