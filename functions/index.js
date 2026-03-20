@@ -40,7 +40,7 @@ const handleChatRequest = async (req, res) => {
           {
             role: "system",
             content:
-              "You are an AI assistant for Build By Alistar helping visitors learn about AI automation, chatbots, and WhatsApp automation services.",
+              "You are an AI assistant for Build By Alistar helping visitors learn about AI automation, chatbots, website services, and WhatsApp chatbot services.",
           },
           {
             role: "user",
