@@ -40,7 +40,7 @@ const handleChatRequest = async (req, res) => {
           {
             role: "system",
             content:
-              "You are an AI assistant for Build By Alistar helping visitors learn about AI automation, chatbots, and WhatsApp automation services.",
+              "You are an AI assistant for Build By Alistar helping visitors learn about AI automation, chatbots, website services, and WhatsApp chatbot services.",
           },
           {
             role: "user",
@@ -63,14 +63,14 @@ const handleWhatsAppVerification = (req, res) => {
   const mode = req.query["hub.mode"];
   const token = req.query["hub.verify_token"];
   const challenge = req.query["hub.challenge"];
+  const tokenValue = getSecretValue(verifyToken, "VERIFY_TOKEN");
 
-  if (mode === "subscribe" && token === getSecretValue(verifyToken, "VERIFY_TOKEN")) {
+  if (mode === "subscribe" && token === tokenValue) {
     console.log("WhatsApp webhook verified");
-    res.status(200).send(challenge);
-    return;
+    return res.status(200).send(challenge);
   }
 
-  res.sendStatus(403);
+  return res.sendStatus(403);
 };
 
 const handleWhatsAppMessage = async (req, res) => {
