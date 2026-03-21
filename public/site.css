@@ -5,10 +5,15 @@
 }
 
 html {
+  width: 100%;
+  min-height: 100%;
   scroll-behavior: smooth;
 }
 
 body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
   font-family: 'Inter', sans-serif;
   background:
     radial-gradient(circle at top left, rgba(109, 94, 252, 0.14), transparent 28%),
@@ -26,8 +31,9 @@ body {
 }
 
 .site-container {
-  width: min(100%, 80rem);
-  margin-inline: auto;
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
 }
 .text-gradient {
   background: linear-gradient(90deg, #6d5efc, #13b8a6);
@@ -180,4 +186,10 @@ body {
 
 .footer-link:hover {
   color: #111827;
+}
+
+main,
+nav,
+footer {
+  width: 100%;
 }
