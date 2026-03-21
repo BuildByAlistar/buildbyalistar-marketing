@@ -18,6 +18,17 @@ body {
   overflow-x: hidden;
 }
 
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.site-container {
+  width: min(100%, 80rem);
+  margin-inline: auto;
+}
 .text-gradient {
   background: linear-gradient(90deg, #6d5efc, #13b8a6);
   background-clip: text;
